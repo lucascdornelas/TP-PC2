@@ -3,16 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/erick/Documents/NetBeansProjects/Banco/src/telasApresentacao/TelaInicial.java</file>
-            <file>file:/C:/Users/erick/Documents/NetBeansProjects/Banco/src/dominioBanco/PessoaJuridica.java</file>
-            <file>file:/C:/Users/erick/Documents/NetBeansProjects/Banco/src/dominioBanco/Pessoa.java</file>
-            <file>file:/C:/Users/erick/Documents/NetBeansProjects/Banco/src/dominioBanco/PessoaFisica.java</file>
-            <file>file:/C:/Users/erick/Documents/NetBeansProjects/Banco/src/dominioBanco/Contato.java</file>
-            <file>file:/C:/Users/erick/Documents/NetBeansProjects/Banco/src/dominioBanco/Conta.java</file>
-            <file>file:/C:/Users/erick/Documents/NetBeansProjects/Banco/src/dominioBanco/ContaPoupanca.java</file>
-            <file>file:/C:/Users/erick/Documents/NetBeansProjects/Banco/src/dominioBanco/ContaCorrente.java</file>
-            <file>file:/C:/Users/erick/Documents/NetBeansProjects/Banco/src/telasApresentacao/TelaCriarConta.java</file>
-            <file>file:/C:/Users/erick/Documents/NetBeansProjects/Banco/src/dominioBanco/Endereco.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Endereco.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/ContaCorrente.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/ContaPoupanca.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/PessoaJuridica.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaCadastro.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Conta.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Banco.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/PessoaFisica.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Pessoa.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaInicial.java</file>
         </group>
     </open-files>
 </project-private>

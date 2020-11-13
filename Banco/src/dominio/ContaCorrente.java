@@ -13,12 +13,17 @@ public class ContaCorrente extends Conta {
     private double saldoDisponivel;
     private double taxaMensal;
 
-    public ContaCorrente(double saldoDisponivel, double taxaMensal, String agencia, String numero, double saldoTotal) {
-        super(agencia, numero, saldoTotal);
-        this.saldoDisponivel = saldoDisponivel;
-        this.taxaMensal = taxaMensal;
+    public ContaCorrente() {
+        super();
+        this.saldoDisponivel = 0;
+        this.taxaMensal = 10;
+        cobrandoTaxa();
     }
 
+    void cobrandoTaxa()
+    {
+        setSaldoDisponivel(getSaldoDisponivel() - this.taxaMensal);
+    }
     public double getSaldoDisponivel() {
         return saldoDisponivel;
     }
@@ -34,6 +39,4 @@ public class ContaCorrente extends Conta {
     public void setTaxaMensal(double taxaMensal) {
         this.taxaMensal = taxaMensal;
     }
-    
-    
 }

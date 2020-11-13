@@ -25,7 +25,4 @@ public class PessoaFisica extends Pessoa{
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    
-    
-    
 }

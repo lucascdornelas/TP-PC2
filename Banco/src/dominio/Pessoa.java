@@ -5,7 +5,9 @@
  */
 package dominio;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -17,12 +19,30 @@ public class Pessoa {
     private Contato contato;
     private Endereco endereo;
     private ArrayList<Conta> contas;
+    private String loginDaConta;
+    private int senhaDaConta;
 
     public Pessoa(String nome, Contato contato, Endereco endereo) {
         this.nome = nome;
         this.contato = contato;
         this.endereo = endereo;
         this.contas = new ArrayList<>();
+        this.loginDaConta = "";
+        this.senhaDaConta = 0;
+    }
+    
+    public void definindoLoginESenha()
+    {
+        SecureRandom gerador = new SecureRandom();
+        Iterator<Conta> it = contas.iterator();
+        
+        while(it.hasNext())
+        {
+            Conta aux = it.next();
+            
+            loginDaConta = aux.getnumeroDaContaDoNovoCliente();
+            senhaDaConta = gerador.nextInt(1000);
+        }
     }
 
     public String getNome() {
@@ -53,9 +73,24 @@ public class Pessoa {
         return contas;
     }
 
-    public void setContas(ArrayList<Conta> contas) {
-        this.contas = contas;
+    public void setContas(Conta contas) {
+        this.contas.add(contas);
+        definindoLoginESenha();
     }
-    
-    
+
+    public String getLoginDaConta() {
+        return loginDaConta;
+    }
+
+    public void setLoginDaConta(String loginDaConta) {
+        this.loginDaConta = loginDaConta;
+    }
+
+    public int getSenhaDaConta() {
+        return senhaDaConta;
+    }
+
+    public void setSenhaDaConta(int senhaDaConta) {
+        this.senhaDaConta = senhaDaConta;
+    }
 }

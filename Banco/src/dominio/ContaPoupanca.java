@@ -9,16 +9,24 @@ package dominio;
  *
  * @author erick
  */
-public class ContaPoupanca {
+public class ContaPoupanca extends Conta{
     
     private double rendimento;
     private double saldoInvestido;
 
-    public ContaPoupanca(double rendimento, double saldoInvestido) {
-        this.rendimento = rendimento;
-        this.saldoInvestido = saldoInvestido;
+    public ContaPoupanca() {
+        super();
+        this.rendimento = 10;
+        this.saldoInvestido = 0;
     }
-
+    
+    void renderDinheiro()
+    {
+        double acrescimo = (this.rendimento*getSaldoInvestido())/100;
+        
+        setSaldoInvestido(getSaldoInvestido()+acrescimo);
+    }
+    
     public double getRendimento() {
         return rendimento;
     }
@@ -34,7 +42,4 @@ public class ContaPoupanca {
     public void setSaldoInvestido(double saldoInvestido) {
         this.saldoInvestido = saldoInvestido;
     }
-    
-    
-    
 }

@@ -9,11 +9,12 @@ package dominio;
  *
  * @author erick
  */
-public class PessoaJuridica {
-    
+public class PessoaJuridica extends Pessoa{
+  
     private String cnpj;
 
-    public PessoaJuridica(String cnpj) {
+    public PessoaJuridica(String cnpj, String nome, Contato contato, Endereco endereo) {
+        super(nome, contato, endereo);
         this.cnpj = cnpj;
     }
 
@@ -24,6 +25,4 @@ public class PessoaJuridica {
     public void setCnpj(String cnpj) {
         this.cnpj = cnpj;
     }
-    
-    
 }
