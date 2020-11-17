@@ -1,11 +1,23 @@
 package apresentacao;
 
 import dominio.Banco;
+import dominio.Conta;
+import dominio.Pessoa;
 
 public class TelaInicial extends javax.swing.JFrame {
+    private TelaCadastro telaCriarConta;
     
-    public TelaInicial() {
+    private Banco banco;
+    private Conta conta;
+    private Pessoa pessoa;
+    
+    public TelaInicial() 
+    {
         initComponents();
+        this.setVisible(true);
+        this.banco = new Banco();
+        this.conta = new Conta();
+        this.telaCriarConta = new TelaCadastro(banco, conta, pessoa, this);
     }
 
     @SuppressWarnings("unchecked")
@@ -90,13 +102,12 @@ public class TelaInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCriarContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCriarContaActionPerformed
-        TelaCadastro telaCriarConta = new TelaCadastro();
         telaCriarConta.setVisible(true);   
         this.setVisible(false);    
     }//GEN-LAST:event_jButtonCriarContaActionPerformed
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
-
+       banco.verificaLogin();
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     public static void main(String args[]) 

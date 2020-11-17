@@ -38,11 +38,15 @@ public class Pessoa {
         
         while(it.hasNext())
         {
-            Conta aux = it.next();
-            
+            Conta aux = it.next();            
             loginDaConta = aux.getnumeroDaContaDoNovoCliente();
             senhaDaConta = gerador.nextInt(1000);
         }
+    }
+    
+    public String definindoLoginDoCliente()
+    {
+        return this.getLoginDaConta();
     }
 
     public String getNome() {

@@ -16,15 +16,25 @@ public class ContaPoupanca extends Conta{
 
     public ContaPoupanca() {
         super();
+
         this.rendimento = 10;
         this.saldoInvestido = 0;
+        renderDinheiro();
+    }
+
+    public ContaPoupanca(String agencia, String numeroDaContaDoNovoCliente, String numeroDaContaDoUltimoCliente, double saldoTotal) 
+    {
+        super(agencia, numeroDaContaDoNovoCliente, numeroDaContaDoUltimoCliente, saldoTotal);
+        this.rendimento = 10;
+        this.saldoInvestido = 0;
+        renderDinheiro();
     }
     
     void renderDinheiro()
     {
         double acrescimo = (this.rendimento*getSaldoInvestido())/100;
-        
         setSaldoInvestido(getSaldoInvestido()+acrescimo);
+        super.setSaldoTotal(saldoInvestido);
     }
     
     public double getRendimento() {

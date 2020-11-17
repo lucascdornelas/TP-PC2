@@ -5,6 +5,7 @@
  */
 package dominio;
 
+
 /**
  *
  * @author erick
@@ -21,17 +22,24 @@ public class Conta {
         this.numeroDaContaDoUltimoCliente = "0";
         this.numeroDaContaDoNovoCliente = "";
         this.saldoTotal = 0;
-        definindoNumeroDaConta();
     }
 
-    void definindoNumeroDaConta()
+    public Conta(String agencia, String numeroDaContaDoNovoCliente, String numeroDaContaDoUltimoCliente, double saldoTotal) {
+        this.agencia = agencia;
+        this.numeroDaContaDoNovoCliente = numeroDaContaDoNovoCliente;
+        this.numeroDaContaDoUltimoCliente = numeroDaContaDoUltimoCliente;
+        this.saldoTotal = saldoTotal;
+    }
+    
+    public void definindoNumeroDaConta()
     {
         int numeroDoUltimoCliente = Integer.parseInt(numeroDaContaDoUltimoCliente);
-        int numeroNovoCliente = numeroDoUltimoCliente + 1;
+        int numeroNovoCliente; 
         numeroDoUltimoCliente++;
+        numeroNovoCliente = numeroDoUltimoCliente;
         
-        setNumeroDaContaDoUltimoCliente(Integer.toString(numeroDoUltimoCliente));
-        setnumeroDaContaDoNovoCliente(Integer.toString(numeroNovoCliente));
+        this.setNumeroDaContaDoUltimoCliente(Integer.toString(numeroDoUltimoCliente));
+        this.setnumeroDaContaDoNovoCliente(Integer.toString(numeroNovoCliente));
     }
     
     public String getAgencia() {

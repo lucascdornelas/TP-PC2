@@ -6,6 +6,7 @@
 package dominio;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import javax.swing.JOptionPane;
 
 /**
@@ -35,6 +36,17 @@ public class Banco {
         //SO PRA TESTAR
         String mensage = String.format("SEJA BEM VINDO AO NOSSO BANCO, SUA CONTA FOI CRIADA\nLOGIN: %s\nSENHA: %d",pessoa.getLoginDaConta(),pessoa.getSenhaDaConta());
         JOptionPane.showMessageDialog(null,mensage ,"CONTA CRIADA COM SUCESSO!", JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public void verificaLogin()
+    {
+        Iterator<Pessoa> it = clientes.iterator();
+        
+        while(it.hasNext())
+        {
+            Pessoa aux = it.next();
+            System.out.println(aux.getContas().iterator().next().getSaldoTotal());
+        }
     }
     
 }

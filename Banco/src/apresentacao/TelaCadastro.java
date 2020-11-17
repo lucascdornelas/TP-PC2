@@ -4,14 +4,20 @@
  * and open the template in the editor.
  */
 package apresentacao;
+import apresentacao.TelaInicial;
+
 
 import dominio.Banco;
+import dominio.Conta;
 import dominio.ContaCorrente;
 import dominio.ContaPoupanca;
 import dominio.Contato;
 import dominio.Endereco;
+import dominio.Pessoa;
+
 import dominio.PessoaFisica;
 import dominio.PessoaJuridica;
+
 
 /**
  *
@@ -27,10 +33,25 @@ public class TelaCadastro extends javax.swing.JFrame {
     //1-CORRENTE, 2-POUPANCA
     private int verificadorDeConta;
     
-    public TelaCadastro() {
+    private final Banco banco; //= new Banco();
+    
+    private Conta conta;
+    private Pessoa pessoa;
+    
+    private TelaInicial tela;
+    
+    public TelaCadastro(Banco banco, Conta conta, Pessoa pessoa, TelaInicial tela ) {
         initComponents();
+        this.jTextFieldCPF.setEnabled(true);
+        this.jTextFieldCNPJ.setEnabled(true);
         this.verificadorDePessoa = 1;
         this.verificadorDeConta = 1;
+        
+        this.banco = banco;
+        this.conta = conta;
+        
+        this.tela = tela;
+        
     }
 
     @SuppressWarnings("unchecked")
@@ -318,7 +339,9 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextFieldNomeRazaoSocialActionPerformed
 
     private void jRadioButtonPessoaFisicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPessoaFisicaActionPerformed
+        this.jTextFieldCPF.setEnabled(true);
         verificadorDePessoa = 1;
+        this.jTextFieldCNPJ.setEnabled(false);
     }//GEN-LAST:event_jRadioButtonPessoaFisicaActionPerformed
 
     private void jRadioButtonContaPoupancaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonContaPoupancaActionPerformed
@@ -326,23 +349,21 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButtonContaPoupancaActionPerformed
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
-        
-        Banco banco = new Banco();
         //CRIANDO UMA PESSOA QUALQUER PARA INSERIR NO ARRAY EM BANCO
         Endereco endereco = new Endereco(jTextFieldRua.getText(),jTextFieldNumero.getText(),jTextFieldBairro.getText(),jTextFieldCidade.getText(),jComboBoxEstado.getSelectedItem().toString());
         Contato contato = new Contato(jTextFieldTelefone.getText(), jTextFieldEmail.getText());
-        
+        conta.definindoNumeroDaConta();
         if(verificadorDePessoa == 1)
         {
             PessoaFisica pessoa = new PessoaFisica(jTextFieldCPF.getText(), jTextFieldNomeRazaoSocial.getText(), contato, endereco);
             if(verificadorDeConta == 1)
             {
-                ContaCorrente conta = new ContaCorrente();
-                banco.abrirConta(pessoa, conta);
+                ContaCorrente conta = new ContaCorrente(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
+                banco.abrirConta(pessoa,conta);
             }
             else
             {
-                ContaPoupanca conta = new ContaPoupanca();
+                ContaPoupanca conta = new ContaPoupanca(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
                 banco.abrirConta(pessoa, conta);
             }
         }
@@ -351,22 +372,35 @@ public class TelaCadastro extends javax.swing.JFrame {
             PessoaJuridica pessoa = new PessoaJuridica(jTextFieldCNPJ.getText(), jTextFieldNomeRazaoSocial.getText(), contato, endereco);
             if(verificadorDeConta == 1)
             {
-                ContaCorrente conta = new ContaCorrente();
+                ContaCorrente conta = new ContaCorrente(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
                 banco.abrirConta(pessoa, conta);
             }
             else
             {
-                ContaPoupanca conta = new ContaPoupanca();
+                ContaPoupanca conta = new ContaPoupanca(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
                 banco.abrirConta(pessoa, conta);
             }
         }
-        
-        TelaInicial tela = new TelaInicial();
+    this.jTextFieldTelefone.setText("");
+    this.jTextFieldRua.setText("");
+    this.jTextFieldNumero.setText("");
+    this.jTextFieldNomeRazaoSocial.setText("");
+    this.jTextFieldEmail.setText("");
+    this.jTextFieldCidade.setText("");
+    this.jTextFieldCPF.setText("");
+    this.jTextFieldCNPJ.setText("");
+    this.jTextFieldBairro.setText("");
+    this.buttonGroupPessoa.clearSelection();
+    this.buttonGroupTipoDeConta.clearSelection();
+
+        this.setVisible(false);
         tela.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     private void jRadioButtonPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPessoaJuridicaActionPerformed
+        this.jTextFieldCNPJ.setEnabled(true);
+        verificadorDePessoa = 1;
+        this.jTextFieldCPF.setEnabled(false);
         verificadorDePessoa = 2;
     }//GEN-LAST:event_jRadioButtonPessoaJuridicaActionPerformed
 
