@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package apresentacao;
 
 import dominio.Banco;
@@ -13,10 +8,6 @@ import java.util.Date;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author erick
- */
 public class TelaSaldoNaTela extends javax.swing.JFrame {
 
     private TelaPrincipalUsuario telaPrincipalUsuario;
@@ -43,14 +34,14 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
         this.jLabelDate.setText(data.toString());
         
         contasCliente();
-        //this.jLabelSaldoDoCliente.setText(String.valueOf(saldoContaCliente()));
     }
     
     public void defineSaldo()
     {
-        this.jLabelSaldoDoCliente.setText(String.valueOf(saldoContaCliente()));
+        this.jLabelSaldoDoCliente.setText(String.valueOf(banco.saldoContaCliente(numeroDaConta)));
     }
 
+    //ESSA FUNÇÃO SERVE PARA DEFINIR QUANTAS CONTAS O CLIENTE TEM
     public void contasCliente()
     {
         Iterator<Pessoa> it_pessoas = banco.getClientes().iterator();
@@ -61,32 +52,7 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
             if(aux_pessoas.getNome().equals(nomeCliente))
                 this.jComboBoxContasDoCliente.addItem(aux_pessoas.getLoginDaConta());
         }
-        //this.numeroDaConta = this.jComboBoxContasDoCliente.getSelectedItem().toString();
     }
-    
-    public double saldoContaCliente()
-    {
-        Iterator<Pessoa> it_pessoas = banco.getClientes().iterator();
-        
-        while(it_pessoas.hasNext())
-        {
-            Pessoa aux_pessoas = it_pessoas.next();
-            if(aux_pessoas.getLoginDaConta().equals(this.numeroDaConta))
-            {
-                Iterator<Conta> it_contas = aux_pessoas.getContas().iterator();
-                while(it_contas.hasNext())
-                {
-                    Conta conta_aux = it_contas.next();
-                    
-                    if(conta_aux.getNumero().equals(this.numeroDaConta))
-                        return conta_aux.getSaldoTotal();
-                }
-            }
-                
-        }
-        return 0;
-    }
-    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -204,7 +170,7 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelDate, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelNomeDoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)

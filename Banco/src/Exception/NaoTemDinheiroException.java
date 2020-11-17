@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package dominio;
+package Exception;
 
 /**
  *
  * @author erick
  */
-class Random {
+public class NaoTemDinheiroException extends Exception 
+{
+    public  NaoTemDinheiroException()
+    {
+        super("VOCÊ NÃO POSSUI ESSE VALOR DISPONÍVEL PARA O SAQUE");
+    }
     
 }

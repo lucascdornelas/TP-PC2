@@ -5,6 +5,7 @@
  */
 package dominio;
 
+import Exception.NaoTemDinheiroException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
@@ -57,4 +58,57 @@ public class Banco {
         return null;
     }
     
+    public double saldoContaCliente(String numeroDaConta)
+    {
+        Iterator<Pessoa> it_pessoas = clientes.iterator();
+        
+        while(it_pessoas.hasNext())
+        {
+            Pessoa aux_pessoas = it_pessoas.next();
+            if(aux_pessoas.getLoginDaConta().equals(numeroDaConta))
+            {
+                Iterator<Conta> it_contas = aux_pessoas.getContas().iterator();
+                while(it_contas.hasNext())
+                {
+                    Conta conta_aux = it_contas.next();
+                    
+                    if(conta_aux.getNumero().equals(numeroDaConta))
+                        return conta_aux.getSaldoTotal();
+                }
+            }
+        }
+        return 0;
+    }
+    
+    public void saque(String numeroDaConta, double valorDoSaque) throws NaoTemDinheiroException
+    {
+        double saldo = saldoContaCliente(numeroDaConta);
+        if(saldo >= valorDoSaque)
+        {
+            Iterator<Pessoa> it_pessoas = clientes.iterator();
+        
+            while(it_pessoas.hasNext())
+            {
+                Pessoa aux_pessoas = it_pessoas.next();
+                if(aux_pessoas.getLoginDaConta().equals(numeroDaConta))
+                {
+                    Iterator<Conta> it_contas = aux_pessoas.getContas().iterator();
+                    while(it_contas.hasNext())
+                    {
+                        Conta conta_aux = it_contas.next();
+
+                        if(conta_aux.getNumero().equals(numeroDaConta))
+                        {
+                            conta_aux.setSaldoTotal(conta_aux.getSaldoTotal()-valorDoSaque);
+                        }
+
+                    }
+                }
+            }    
+        }
+        else
+        {
+            throw new NaoTemDinheiroException();
+        }
+    }
 }

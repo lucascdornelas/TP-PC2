@@ -10,6 +10,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
     private String nomeCliente;
     
     private TelaSaldoNaTela telaSaldoNaTela;
+    private TelaSaqueDeposito telaSaqueDeposito;
 
     public TelaPrincipalUsuario(Banco banco, String nomeCliente) 
     {
@@ -17,6 +18,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         this.nomeCliente = nomeCliente;
         
         this.telaSaldoNaTela = new TelaSaldoNaTela(this,banco,nomeCliente);
+        this.telaSaqueDeposito = new TelaSaqueDeposito(this, banco, nomeCliente);
         initComponents();
         inicializa();
     }
@@ -70,11 +72,21 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         });
 
         jButtonSaldoOuDeposito.setText("SAQUE OU DEPÓSITO");
+        jButtonSaldoOuDeposito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSaqueDepositoActionPerformed(evt);
+            }
+        });
 
         jButtonTransferencia.setText("TRANSFERÊNCIA");
 
         jButtonFecharMinhaConta.setForeground(new java.awt.Color(255, 0, 51));
         jButtonFecharMinhaConta.setText("FECHAR MINHA CONTA");
+        jButtonFecharMinhaConta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonFecharMinhaContaActionPerformed(evt);
+            }
+        });
 
         jLabelNomeCliente.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
 
@@ -141,6 +153,15 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         this.setVisible(false);
         this.telaSaldoNaTela.setVisible(true);
     }//GEN-LAST:event_jButtonSaldoNaTelaActionPerformed
+
+    private void jButtonFecharMinhaContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFecharMinhaContaActionPerformed
+        //APAGAR EM DISCO OS DADOS DA PESSOA E DA CONTA
+    }//GEN-LAST:event_jButtonFecharMinhaContaActionPerformed
+
+    private void jButtonSaqueDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaqueDepositoActionPerformed
+        this.setVisible(false);
+        this.telaSaqueDeposito.setVisible(true);
+    }//GEN-LAST:event_jButtonSaqueDepositoActionPerformed
 
 
 

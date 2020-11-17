@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package apresentacao;
 
 import dominio.Banco;
@@ -17,16 +12,11 @@ import dominio.PessoaJuridica;
 import javax.swing.JOptionPane;
 
 
-/**
- *
- * @author Lucas
- */
 public class TelaCadastro extends javax.swing.JFrame {
     
-    private final Banco banco; //= new Banco();
+    private final Banco banco;
     
     private Conta conta;
-    //private Pessoa pessoa;
     
     private TelaInicial telaInicial;
     
