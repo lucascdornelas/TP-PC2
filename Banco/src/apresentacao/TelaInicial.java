@@ -140,14 +140,15 @@ public class TelaInicial extends javax.swing.JFrame {
         nome = banco.verificaLogin(login, senha);
         
         //System.out.println(pessoa.getNome());
-        if(nome != null)
+        if(nome != null){
             JOptionPane.showMessageDialog(null,"OLÁ, SEJA BEM VINDO NOVAMENTE: "+nome ,"LOGIN", JOptionPane.INFORMATION_MESSAGE);
-        else
+            this.telaPrincipalUsuario = new TelaPrincipalUsuario(banco, nome);
+            telaPrincipalUsuario.setVisible(true);
+            this.setVisible(false);
+        }else
             JOptionPane.showMessageDialog(null,"USUÁRIO OU SENHA INCORRETO" ,"LOGIN", JOptionPane.ERROR_MESSAGE);
         
-        this.telaPrincipalUsuario = new TelaPrincipalUsuario(banco, nome);
-        telaPrincipalUsuario.setVisible(true);
-        this.setVisible(false);
+        
         
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
