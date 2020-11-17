@@ -41,6 +41,7 @@ public class Pessoa {
             Conta aux = it.next();            
             loginDaConta = aux.getnumeroDaContaDoNovoCliente();
             senhaDaConta = gerador.nextInt(1000);
+            aux.setNumero(loginDaConta);
         }
     }
     

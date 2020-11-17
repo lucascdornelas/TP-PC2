@@ -148,8 +148,6 @@ public class TelaInicial extends javax.swing.JFrame {
         }else
             JOptionPane.showMessageDialog(null,"USUÁRIO OU SENHA INCORRETO" ,"LOGIN", JOptionPane.ERROR_MESSAGE);
         
-        
-        
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     private void jButtonEsqueciMinhaSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEsqueciMinhaSenhaActionPerformed

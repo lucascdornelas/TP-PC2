@@ -11,7 +11,6 @@ import dominio.ContaCorrente;
 import dominio.ContaPoupanca;
 import dominio.Contato;
 import dominio.Endereco;
-import dominio.Pessoa;
 
 import dominio.PessoaFisica;
 import dominio.PessoaJuridica;
@@ -23,14 +22,6 @@ import javax.swing.JOptionPane;
  * @author Lucas
  */
 public class TelaCadastro extends javax.swing.JFrame {
-
-    // PARA SABER SE A PESSOA É FISICA OU JURIDICA
-    //1-FISICA, 2-JURIDICA
-    private int verificadorDePessoa; 
-    
-    // PARA SABER SE A CONTA É POUPANÇA OU CORRENTE
-    //1-CORRENTE, 2-POUPANCA
-    private int verificadorDeConta;
     
     private final Banco banco; //= new Banco();
     
@@ -42,9 +33,6 @@ public class TelaCadastro extends javax.swing.JFrame {
     public TelaCadastro(Banco banco, Conta conta, TelaInicial tela ) {
         initComponents();
         this.jTextFieldCPF.setEnabled(true);
-        this.jTextFieldCNPJ.setEnabled(true);
-        this.verificadorDePessoa = 1;
-        this.verificadorDeConta = 1;
         
         this.banco = banco;
         this.conta = conta;
@@ -330,23 +318,22 @@ public class TelaCadastro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBoxEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxEstadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBoxEstadoActionPerformed
+    private void jTextFieldNomeRazaoSocialActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+    }
+    
+    private void jRadioButtonContaCorrenteActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+    }
 
-    private void jTextFieldNomeRazaoSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNomeRazaoSocialActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextFieldNomeRazaoSocialActionPerformed
-
+    private void jRadioButtonContaPoupancaActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+    }    
+    
+    private void jComboBoxEstadoActionPerformed(java.awt.event.ActionEvent evt) {                                                         
+    }     
+    
     private void jRadioButtonPessoaFisicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPessoaFisicaActionPerformed
         this.jTextFieldCPF.setEnabled(true);
-        verificadorDePessoa = 1;
         this.jTextFieldCNPJ.setEnabled(false);
     }//GEN-LAST:event_jRadioButtonPessoaFisicaActionPerformed
-
-    private void jRadioButtonContaPoupancaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonContaPoupancaActionPerformed
-        verificadorDeConta = 2;
-    }//GEN-LAST:event_jRadioButtonContaPoupancaActionPerformed
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
         String mensage = null;    
@@ -355,10 +342,12 @@ public class TelaCadastro extends javax.swing.JFrame {
         Endereco endereco = new Endereco(jTextFieldRua.getText(),jTextFieldNumero.getText(),jTextFieldBairro.getText(),jTextFieldCidade.getText(),jComboBoxEstado.getSelectedItem().toString());
         Contato contato = new Contato(jTextFieldTelefone.getText(), jTextFieldEmail.getText());
         conta.definindoNumeroDaConta();
-        if(verificadorDePessoa == 1)
+        
+        
+        if(this.jRadioButtonPessoaFisica.isSelected())
         {
             PessoaFisica pessoa = new PessoaFisica(jTextFieldCPF.getText(), jTextFieldNomeRazaoSocial.getText(), contato, endereco);
-            if(verificadorDeConta == 1)
+            if(this.jRadioButtonContaCorrente.isSelected())
             {
                 ContaCorrente conta = new ContaCorrente(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
                 mensage = banco.abrirConta(pessoa,conta);
@@ -372,7 +361,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         else
         {
             PessoaJuridica pessoa = new PessoaJuridica(jTextFieldCNPJ.getText(), jTextFieldNomeRazaoSocial.getText(), contato, endereco);
-            if(verificadorDeConta == 1)
+            if(this.jRadioButtonContaCorrente.isSelected())
             {
                 ContaCorrente conta = new ContaCorrente(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
                 mensage = banco.abrirConta(pessoa, conta);
@@ -403,14 +392,8 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     private void jRadioButtonPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPessoaJuridicaActionPerformed
         this.jTextFieldCNPJ.setEnabled(true);
-        verificadorDePessoa = 1;
         this.jTextFieldCPF.setEnabled(false);
-        verificadorDePessoa = 2;
     }//GEN-LAST:event_jRadioButtonPessoaJuridicaActionPerformed
-
-    private void jRadioButtonContaCorrenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonContaCorrenteActionPerformed
-        verificadorDeConta = 1;
-    }//GEN-LAST:event_jRadioButtonContaCorrenteActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroupPessoa;
