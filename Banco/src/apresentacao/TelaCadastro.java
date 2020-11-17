@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package apresentacao;
-import apresentacao.TelaInicial;
-
 
 import dominio.Banco;
 import dominio.Conta;
@@ -17,6 +15,7 @@ import dominio.Pessoa;
 
 import dominio.PessoaFisica;
 import dominio.PessoaJuridica;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -36,11 +35,11 @@ public class TelaCadastro extends javax.swing.JFrame {
     private final Banco banco; //= new Banco();
     
     private Conta conta;
-    private Pessoa pessoa;
+    //private Pessoa pessoa;
     
-    private TelaInicial tela;
+    private TelaInicial telaInicial;
     
-    public TelaCadastro(Banco banco, Conta conta, Pessoa pessoa, TelaInicial tela ) {
+    public TelaCadastro(Banco banco, Conta conta, TelaInicial tela ) {
         initComponents();
         this.jTextFieldCPF.setEnabled(true);
         this.jTextFieldCNPJ.setEnabled(true);
@@ -50,8 +49,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         this.banco = banco;
         this.conta = conta;
         
-        this.tela = tela;
-        
+        this.telaInicial = tela;
     }
 
     @SuppressWarnings("unchecked")
@@ -91,8 +89,11 @@ public class TelaCadastro extends javax.swing.JFrame {
         jRadioButtonContaPoupanca = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Novo Cliente - Banco Sudeste");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Cadastro - Banco SUDESTE");
 
         buttonGroupPessoa.add(jRadioButtonPessoaFisica);
@@ -148,6 +149,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         jLabel13.setText("CNPJ:");
 
+        jButton1.setForeground(new java.awt.Color(0, 0, 255));
         jButton1.setText("Cadastrar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -301,7 +303,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                     .addComponent(jRadioButtonContaPoupanca))
                 .addGap(12, 12, 12)
                 .addComponent(jButton1)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -310,12 +312,10 @@ public class TelaCadastro extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(226, 226, 226)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -349,6 +349,8 @@ public class TelaCadastro extends javax.swing.JFrame {
     }//GEN-LAST:event_jRadioButtonContaPoupancaActionPerformed
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
+        String mensage = null;    
+
         //CRIANDO UMA PESSOA QUALQUER PARA INSERIR NO ARRAY EM BANCO
         Endereco endereco = new Endereco(jTextFieldRua.getText(),jTextFieldNumero.getText(),jTextFieldBairro.getText(),jTextFieldCidade.getText(),jComboBoxEstado.getSelectedItem().toString());
         Contato contato = new Contato(jTextFieldTelefone.getText(), jTextFieldEmail.getText());
@@ -359,12 +361,12 @@ public class TelaCadastro extends javax.swing.JFrame {
             if(verificadorDeConta == 1)
             {
                 ContaCorrente conta = new ContaCorrente(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
-                banco.abrirConta(pessoa,conta);
+                mensage = banco.abrirConta(pessoa,conta);
             }
             else
             {
                 ContaPoupanca conta = new ContaPoupanca(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
-                banco.abrirConta(pessoa, conta);
+                mensage = banco.abrirConta(pessoa, conta);
             }
         }
         else
@@ -373,14 +375,15 @@ public class TelaCadastro extends javax.swing.JFrame {
             if(verificadorDeConta == 1)
             {
                 ContaCorrente conta = new ContaCorrente(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
-                banco.abrirConta(pessoa, conta);
+                mensage = banco.abrirConta(pessoa, conta);
             }
             else
             {
                 ContaPoupanca conta = new ContaPoupanca(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
-                banco.abrirConta(pessoa, conta);
+                mensage = banco.abrirConta(pessoa, conta);
             }
         }
+
     this.jTextFieldTelefone.setText("");
     this.jTextFieldRua.setText("");
     this.jTextFieldNumero.setText("");
@@ -392,9 +395,10 @@ public class TelaCadastro extends javax.swing.JFrame {
     this.jTextFieldBairro.setText("");
     this.buttonGroupPessoa.clearSelection();
     this.buttonGroupTipoDeConta.clearSelection();
-
-        this.setVisible(false);
-        tela.setVisible(true);
+    
+    JOptionPane.showMessageDialog(null,mensage ,"CONTA CRIADA COM SUCESSO!", JOptionPane.INFORMATION_MESSAGE);
+    this.setVisible(false);
+    telaInicial.setVisible(true);
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     private void jRadioButtonPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPessoaJuridicaActionPerformed

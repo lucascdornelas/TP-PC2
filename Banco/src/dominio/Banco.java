@@ -29,24 +29,32 @@ public class Banco {
         this.clientes = clientes;
     }
     
-    public void abrirConta(Pessoa pessoa, Conta conta)
+    public String abrirConta(Pessoa pessoa, Conta conta)
     {
         pessoa.setContas(conta);
         clientes.add(pessoa);
-        //SO PRA TESTAR
-        String mensage = String.format("SEJA BEM VINDO AO NOSSO BANCO, SUA CONTA FOI CRIADA\nLOGIN: %s\nSENHA: %d",pessoa.getLoginDaConta(),pessoa.getSenhaDaConta());
-        JOptionPane.showMessageDialog(null,mensage ,"CONTA CRIADA COM SUCESSO!", JOptionPane.INFORMATION_MESSAGE);
+        
+        String mensage = String.format("SEJA BEM VINDO AO NOSSO BANCO %s, SUA CONTA FOI CRIADA\nLOGIN: %s\nSENHA: %d",pessoa.getNome(),pessoa.getLoginDaConta(),pessoa.getSenhaDaConta());
+        return mensage;
+        //JOptionPane.showMessageDialog(null,mensage ,"CONTA CRIADA COM SUCESSO!", JOptionPane.INFORMATION_MESSAGE);
     }
     
-    public void verificaLogin()
+    public String verificaLogin(String login, String senha)
     {
         Iterator<Pessoa> it = clientes.iterator();
         
         while(it.hasNext())
         {
             Pessoa aux = it.next();
-            System.out.println(aux.getContas().iterator().next().getSaldoTotal());
+            if(aux.getLoginDaConta().equals(login))
+            {
+                if(aux.getSenhaDaConta() == Integer.parseInt(senha))
+                {
+                    return aux.getNome();
+                }
+            }
         }
+        return null;
     }
     
 }

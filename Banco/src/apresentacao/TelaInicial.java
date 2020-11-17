@@ -3,10 +3,12 @@ package apresentacao;
 import dominio.Banco;
 import dominio.Conta;
 import dominio.Pessoa;
+import javax.swing.JOptionPane;
 
 public class TelaInicial extends javax.swing.JFrame {
     private TelaCadastro telaCriarConta;
-    
+    private TelaPrincipalUsuario telaPrincipalUsuario;
+       
     private Banco banco;
     private Conta conta;
     private Pessoa pessoa;
@@ -17,7 +19,8 @@ public class TelaInicial extends javax.swing.JFrame {
         this.setVisible(true);
         this.banco = new Banco();
         this.conta = new Conta();
-        this.telaCriarConta = new TelaCadastro(banco, conta, pessoa, this);
+        this.telaCriarConta = new TelaCadastro(banco, conta, this);
+        //this.telaPrincipalUsuario = new TelaPrincipalUsuario(banco);
     }
 
     @SuppressWarnings("unchecked")
@@ -31,12 +34,18 @@ public class TelaInicial extends javax.swing.JFrame {
         jFieldUsuario = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jFieldSenha = new javax.swing.JPasswordField();
+        jButtonEsqueciMinhaSenha = new javax.swing.JButton();
+        filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(0, 0), new java.awt.Dimension(0, 0), new java.awt.Dimension(32767, 32767));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Banco Sudeste");
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 204));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("BANCO SUDESTE");
 
+        jButtonCriarConta.setForeground(new java.awt.Color(0, 0, 255));
         jButtonCriarConta.setText("CRIAR CONTA");
         jButtonCriarConta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,35 +64,46 @@ public class TelaInicial extends javax.swing.JFrame {
 
         jLabel3.setText("Senha: ");
 
+        jButtonEsqueciMinhaSenha.setForeground(new java.awt.Color(255, 0, 51));
+        jButtonEsqueciMinhaSenha.setText("ESQUECI MINHA SENHA");
+        jButtonEsqueciMinhaSenha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEsqueciMinhaSenhaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonLogin, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jFieldUsuario))
-                    .addComponent(jButtonCriarConta, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jFieldSenha)))
-                .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(105, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(104, 104, 104))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonLogin, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonCriarConta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonEsqueciMinhaSenha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jFieldSenha)
+                            .addComponent(jFieldUsuario))))
+                .addContainerGap())
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jFieldUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -91,11 +111,18 @@ public class TelaInicial extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jFieldSenha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addGap(15, 15, 15)
                 .addComponent(jButtonLogin)
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonEsqueciMinhaSenha)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonCriarConta)
-                .addGap(19, 19, 19))
+                .addGap(13, 13, 13))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         pack();
@@ -107,8 +134,26 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCriarContaActionPerformed
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
-       banco.verificaLogin();
+        String login,nome;
+        login = this.jFieldUsuario.getText();
+        String senha = new String(this.jFieldSenha.getPassword());
+        nome = banco.verificaLogin(login, senha);
+        
+        //System.out.println(pessoa.getNome());
+        if(nome != null)
+            JOptionPane.showMessageDialog(null,"OLÁ, SEJA BEM VINDO NOVAMENTE: "+nome ,"LOGIN", JOptionPane.INFORMATION_MESSAGE);
+        else
+            JOptionPane.showMessageDialog(null,"USUÁRIO OU SENHA INCORRETO" ,"LOGIN", JOptionPane.ERROR_MESSAGE);
+        
+        this.telaPrincipalUsuario = new TelaPrincipalUsuario(banco, nome);
+        telaPrincipalUsuario.setVisible(true);
+        this.setVisible(false);
+        
     }//GEN-LAST:event_jButtonLoginActionPerformed
+
+    private void jButtonEsqueciMinhaSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEsqueciMinhaSenhaActionPerformed
+        JOptionPane.showMessageDialog(null,"Vefique suas informações na gerência\n"+"bancosudeste@naoexiste.com.br" ,"LOGIN", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButtonEsqueciMinhaSenhaActionPerformed
 
     public static void main(String args[]) 
     {
@@ -138,7 +183,9 @@ public class TelaInicial extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.Box.Filler filler1;
     private javax.swing.JButton jButtonCriarConta;
+    private javax.swing.JButton jButtonEsqueciMinhaSenha;
     private javax.swing.JButton jButtonLogin;
     private javax.swing.JPasswordField jFieldSenha;
     private javax.swing.JTextField jFieldUsuario;
