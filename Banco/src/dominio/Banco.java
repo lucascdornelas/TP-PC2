@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dominio;
 
+import Exception.NaoExisteContaException;
 import Exception.NaoTemDinheiroException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import javax.swing.JOptionPane;
 
-/**
- *
- * @author erick
- */
 public class Banco {
     
     private ArrayList<Pessoa> clientes;
@@ -101,7 +92,6 @@ public class Banco {
                         {
                             conta_aux.setSaldoTotal(conta_aux.getSaldoTotal()-valorDoSaque);
                         }
-
                     }
                 }
             }    
@@ -110,5 +100,54 @@ public class Banco {
         {
             throw new NaoTemDinheiroException();
         }
+    }
+    
+    public void deposito(String numeroDaConta, double valorDeposito) 
+    {
+        Iterator<Pessoa> it_pessoas = clientes.iterator();
+
+        while (it_pessoas.hasNext()) {
+            Pessoa aux_pessoas = it_pessoas.next();
+            if (aux_pessoas.getLoginDaConta().equals(numeroDaConta)) {
+                Iterator<Conta> it_contas = aux_pessoas.getContas().iterator();
+                while (it_contas.hasNext()) {
+                    Conta conta_aux = it_contas.next();
+
+                    if (conta_aux.getNumero().equals(numeroDaConta)) {
+                        conta_aux.setSaldoTotal(conta_aux.getSaldoTotal() + valorDeposito);
+                    }
+                }
+            }
+        }
+    }
+    
+    public void transferir(String numeroContaOrigem, String numeroDaContaDestino, double valorTransferencia) throws NaoExisteContaException, NaoTemDinheiroException
+    {
+        int registrador = 0;
+        //se conseguir sacar, ele pode transferir
+        this.saque(numeroContaOrigem,valorTransferencia);
+        
+            Iterator<Pessoa> it_pessoas = clientes.iterator();
+
+            while (it_pessoas.hasNext()) 
+            {
+                Pessoa aux_pessoas = it_pessoas.next();
+                if (aux_pessoas.getLoginDaConta().equals(numeroDaContaDestino)) {
+                    Iterator<Conta> it_contas = aux_pessoas.getContas().iterator();
+                    while (it_contas.hasNext()) 
+                    {
+                        Conta conta_aux = it_contas.next();
+                        if (conta_aux.getNumero().equals(numeroDaContaDestino)) 
+                        {
+                                conta_aux.setSaldoTotal(conta_aux.getSaldoTotal() + valorTransferencia);//realizada
+                                registrador ++;
+                        }
+                    }
+                    
+                }
+            }
+            
+            if(registrador == 0)
+                throw new NaoExisteContaException();
     }
 }

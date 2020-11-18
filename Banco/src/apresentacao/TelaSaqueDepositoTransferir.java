@@ -1,36 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package apresentacao;
 
 import Exception.NaoTemDinheiroException;
 import dominio.Banco;
-import dominio.Conta;
 import dominio.Pessoa;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author erick
- */
-public class TelaSaqueDeposito extends javax.swing.JFrame {
+public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
     
     private TelaPrincipalUsuario telaPrincipalUsuario;
+    private TelaTransferir telaTransferir;
+    
     private Banco banco; 
     private String nomeCliente;
     
     private String valor;
     private String numeroDaConta;
 
-    public TelaSaqueDeposito(TelaPrincipalUsuario telaPrincipalUsuario, Banco banco, String nomeCliente) {
-        this.telaPrincipalUsuario = telaPrincipalUsuario;
+    public TelaSaqueDepositoTransferir(TelaPrincipalUsuario telaPrincipalUsuario, Banco banco, String nomeCliente) {
         this.banco = banco;
-        this.nomeCliente = nomeCliente;        
+        this.nomeCliente = nomeCliente;       
+        
+        this.telaPrincipalUsuario = telaPrincipalUsuario;
+        
+        
         initComponents();
         inicializa();
     }
@@ -66,7 +61,6 @@ public class TelaSaqueDeposito extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton4 = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -81,11 +75,13 @@ public class TelaSaqueDeposito extends javax.swing.JFrame {
         jComboBoxContasDoCliente = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jLabelSaldoDoCliente = new javax.swing.JLabel();
-
-        jButton4.setText("jButton4");
+        jButtonTransferencia = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Saque ou Depósito");
+        setTitle("Banco Sudeste - Conta");
+
+        jPanel1.setToolTipText("Banco Sudeste - Conta");
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 204));
@@ -102,6 +98,11 @@ public class TelaSaqueDeposito extends javax.swing.JFrame {
         });
 
         jButtonDeposito.setText("Depósito");
+        jButtonDeposito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDepositoActionPerformed(evt);
+            }
+        });
 
         jButtonVoltarAoMenuAnterior.setText("Voltar ao Menu Anterior");
         jButtonVoltarAoMenuAnterior.addActionListener(new java.awt.event.ActionListener() {
@@ -130,11 +131,20 @@ public class TelaSaqueDeposito extends javax.swing.JFrame {
 
         jLabelSaldoDoCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
+        jButtonTransferencia.setText("Transferir");
+        jButtonTransferencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTransferenciaActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("Atualizar meu saldo");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -161,6 +171,8 @@ public class TelaSaqueDeposito extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabelSaldoDoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addComponent(jButtonTransferencia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,9 +197,13 @@ public class TelaSaqueDeposito extends javax.swing.JFrame {
                         .addComponent(jComboBoxContasDoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel5)))
                 .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(jButtonSaque)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonDeposito)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonTransferencia)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonVoltarAoMenuAnterior)
                 .addContainerGap())
@@ -213,6 +229,7 @@ public class TelaSaqueDeposito extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVoltarAoMenuAnteriorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVoltarAoMenuAnteriorActionPerformed
+        this.jTextFieldValor.setText("");
         this.setVisible(false);
         this.telaPrincipalUsuario.setVisible(true);
     }//GEN-LAST:event_jButtonVoltarAoMenuAnteriorActionPerformed
@@ -235,6 +252,8 @@ public class TelaSaqueDeposito extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(null, "Algarismo Inválido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
         }
+        this.jTextFieldValor.setText("");
+        defineSaldo();
         this.setVisible(false);
         this.telaPrincipalUsuario.setVisible(true);
     }//GEN-LAST:event_jButtonSaqueActionPerformed
@@ -242,14 +261,43 @@ public class TelaSaqueDeposito extends javax.swing.JFrame {
     private void jComboBoxContasDoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxContasDoClienteActionPerformed
         this.numeroDaConta = this.jComboBoxContasDoCliente.getSelectedItem().toString();
         defineSaldo();
+        //this.telaTransferir = new TelaTransferir(this.banco, this.nomeCliente, this, this.numeroDaConta);
     }//GEN-LAST:event_jComboBoxContasDoClienteActionPerformed
+
+    private void jButtonDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDepositoActionPerformed
+        valor = this.jTextFieldValor.getText();   
+        //adicionando dinheiro na conta        
+        try 
+        {
+            banco.deposito(this.numeroDaConta, Double.parseDouble(this.valor));
+            JOptionPane.showMessageDialog(null, "Deposito realizado com sucesso!", "Banco Sudeste", JOptionPane.INFORMATION_MESSAGE);            
+        } 
+        catch (NumberFormatException ex) 
+        {
+            JOptionPane.showMessageDialog(null, "Algarismo Inválido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
+        }
+        this.jTextFieldValor.setText("");
+        defineSaldo();
+        this.setVisible(false);
+        this.telaPrincipalUsuario.setVisible(true); 
+           
+    }//GEN-LAST:event_jButtonDepositoActionPerformed
+
+    private void jButtonTransferenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTransferenciaActionPerformed
+        this.telaTransferir = new TelaTransferir(this.banco, this.nomeCliente, this, this.numeroDaConta);
+        this.jTextFieldValor.setText("");
+        
+        this.setVisible(false);
+        this.telaTransferir.setVisible(true);
+    }//GEN-LAST:event_jButtonTransferenciaActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonDeposito;
     private javax.swing.JButton jButtonSaque;
+    private javax.swing.JButton jButtonTransferencia;
     private javax.swing.JButton jButtonVoltarAoMenuAnterior;
     private javax.swing.JComboBox<String> jComboBoxContasDoCliente;
     private javax.swing.JLabel jLabel1;

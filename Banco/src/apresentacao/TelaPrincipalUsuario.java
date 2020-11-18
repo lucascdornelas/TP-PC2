@@ -3,6 +3,7 @@ package apresentacao;
 import dominio.Banco;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import javax.swing.JOptionPane;
 
 
 public class TelaPrincipalUsuario extends javax.swing.JFrame {
@@ -10,7 +11,8 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
     private String nomeCliente;
     
     private TelaSaldoNaTela telaSaldoNaTela;
-    private TelaSaqueDeposito telaSaqueDeposito;
+    private TelaSaqueDepositoTransferir telaSaqueDepositoTransferir;
+    //private TelaTransferir telaTransferir;
 
     public TelaPrincipalUsuario(Banco banco, String nomeCliente) 
     {
@@ -18,7 +20,8 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         this.nomeCliente = nomeCliente;
         
         this.telaSaldoNaTela = new TelaSaldoNaTela(this,banco,nomeCliente);
-        this.telaSaqueDeposito = new TelaSaqueDeposito(this, banco, nomeCliente);
+        this.telaSaqueDepositoTransferir = new TelaSaqueDepositoTransferir(this, banco, nomeCliente);
+        
         initComponents();
         inicializa();
     }
@@ -40,12 +43,12 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jButtonSaldoNaTela = new javax.swing.JButton();
-        jButtonSaldoOuDeposito = new javax.swing.JButton();
-        jButtonTransferencia = new javax.swing.JButton();
+        jButtonSaldoOuDepositoOuTransferir = new javax.swing.JButton();
         jButtonFecharMinhaConta = new javax.swing.JButton();
         jLabelNomeCliente = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabelDate = new javax.swing.JLabel();
+        jButtonSair = new javax.swing.JButton();
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -61,6 +64,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Banco Sudeste - Usuário");
 
         jLabel1.setText("Olá,");
 
@@ -71,14 +75,12 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
             }
         });
 
-        jButtonSaldoOuDeposito.setText("SAQUE OU DEPÓSITO");
-        jButtonSaldoOuDeposito.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSaldoOuDepositoOuTransferir.setText("SACAR, DEPOSITAR OU TRANSFERIR");
+        jButtonSaldoOuDepositoOuTransferir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSaqueDepositoActionPerformed(evt);
+                jButtonSaqueDepositoTransferirActionPerformed(evt);
             }
         });
-
-        jButtonTransferencia.setText("TRANSFERÊNCIA");
 
         jButtonFecharMinhaConta.setForeground(new java.awt.Color(255, 0, 51));
         jButtonFecharMinhaConta.setText("FECHAR MINHA CONTA");
@@ -89,6 +91,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         });
 
         jLabelNomeCliente.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
+        jLabelNomeCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 255));
@@ -97,6 +100,14 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
         jLabelDate.setForeground(new java.awt.Color(0, 204, 0));
         jLabelDate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jButtonSair.setForeground(new java.awt.Color(204, 0, 0));
+        jButtonSair.setText("Sair");
+        jButtonSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -114,14 +125,16 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
                         .addGap(10, 10, 10)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButtonSaldoNaTela, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonSaldoOuDeposito, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButtonTransferencia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonSaldoOuDepositoOuTransferir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButtonFecharMinhaConta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
-                            .addComponent(jLabelDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jLabelDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButtonSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -138,11 +151,11 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonSaldoNaTela)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonSaldoOuDeposito, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonTransferencia)
+                .addComponent(jButtonSaldoOuDepositoOuTransferir, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonFecharMinhaConta)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addComponent(jButtonSair)
                 .addContainerGap())
         );
 
@@ -158,18 +171,23 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         //APAGAR EM DISCO OS DADOS DA PESSOA E DA CONTA
     }//GEN-LAST:event_jButtonFecharMinhaContaActionPerformed
 
-    private void jButtonSaqueDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaqueDepositoActionPerformed
+    private void jButtonSaqueDepositoTransferirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaqueDepositoTransferirActionPerformed
         this.setVisible(false);
-        this.telaSaqueDeposito.setVisible(true);
-    }//GEN-LAST:event_jButtonSaqueDepositoActionPerformed
+        this.telaSaqueDepositoTransferir.setVisible(true);
+        JOptionPane.showMessageDialog(null, "Selecione sua conta", "Banco Sudeste", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_jButtonSaqueDepositoTransferirActionPerformed
+
+    private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jButtonSairActionPerformed
 
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonFecharMinhaConta;
+    private javax.swing.JButton jButtonSair;
     private javax.swing.JButton jButtonSaldoNaTela;
-    private javax.swing.JButton jButtonSaldoOuDeposito;
-    private javax.swing.JButton jButtonTransferencia;
+    private javax.swing.JButton jButtonSaldoOuDepositoOuTransferir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabelDate;

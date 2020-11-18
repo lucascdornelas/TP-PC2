@@ -39,7 +39,7 @@ public class TelaInicial extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Banco Sudeste");
+        setTitle("Banco Sudeste - Login");
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 204));
@@ -158,13 +158,18 @@ public class TelaInicial extends javax.swing.JFrame {
         String senha = new String(this.jFieldSenha.getPassword());
         nome = banco.verificaLogin(login, senha);
         
-        if(nome != null){
+        if(nome != null)
+        {
             JOptionPane.showMessageDialog(null,"OLÁ, SEJA BEM VINDO NOVAMENTE: "+nome ,"LOGIN", JOptionPane.INFORMATION_MESSAGE);
             this.telaPrincipalUsuario = new TelaPrincipalUsuario(banco, nome);
             telaPrincipalUsuario.setVisible(true);
             this.setVisible(false);
         }else
+        {
             JOptionPane.showMessageDialog(null,"USUÁRIO OU SENHA INCORRETO" ,"LOGIN", JOptionPane.ERROR_MESSAGE);
+            this.jFieldUsuario.setText("");
+            this.jFieldSenha.setText("");
+        }
         
     }//GEN-LAST:event_jButtonLoginActionPerformed
 

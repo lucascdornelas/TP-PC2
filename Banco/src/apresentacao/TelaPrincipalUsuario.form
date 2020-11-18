@@ -25,6 +25,7 @@
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="Banco Sudeste - Usu&#xe1;rio"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -58,8 +59,7 @@
                       <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jButtonSaldoNaTela" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jButtonSaldoOuDeposito" alignment="1" max="32767" attributes="0"/>
-                          <Component id="jButtonTransferencia" alignment="1" max="32767" attributes="0"/>
+                          <Component id="jButtonSaldoOuDepositoOuTransferir" alignment="1" max="32767" attributes="0"/>
                           <Component id="jButtonFecharMinhaConta" max="32767" attributes="0"/>
                       </Group>
                   </Group>
@@ -69,6 +69,10 @@
                           <Component id="jLabel2" alignment="1" pref="280" max="32767" attributes="0"/>
                           <Component id="jLabelDate" max="32767" attributes="0"/>
                       </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jButtonSair" max="32767" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -90,11 +94,11 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jButtonSaldoNaTela" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jButtonSaldoOuDeposito" min="-2" pref="57" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jButtonTransferencia" min="-2" max="-2" attributes="0"/>
+              <Component id="jButtonSaldoOuDepositoOuTransferir" min="-2" pref="91" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="jButtonFecharMinhaConta" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
+              <Component id="jButtonSair" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -114,18 +118,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSaldoNaTelaActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButtonSaldoOuDeposito">
+    <Component class="javax.swing.JButton" name="jButtonSaldoOuDepositoOuTransferir">
       <Properties>
-        <Property name="text" type="java.lang.String" value="SAQUE OU DEP&#xd3;SITO"/>
+        <Property name="text" type="java.lang.String" value="SACAR, DEPOSITAR OU TRANSFERIR"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSaqueDepositoActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSaqueDepositoTransferirActionPerformed"/>
       </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButtonTransferencia">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="TRANSFER&#xca;NCIA"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonFecharMinhaConta">
       <Properties>
@@ -143,6 +142,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Times New Roman" size="18" style="2"/>
         </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
@@ -164,6 +164,17 @@
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButtonSair">
+      <Properties>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="cc" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Sair"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSairActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
