@@ -247,7 +247,6 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
         defineSaldo();
     }//GEN-LAST:event_jButtonAtualizaSaldoActionPerformed
 
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;

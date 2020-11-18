@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 
 
 public class TelaTransferir extends javax.swing.JFrame {
-    //private TelaPrincipalUsuario telaPrincipalUsuario;
     private TelaSaqueDepositoTransferir telaSaqueDepositoTransferir;
     
     private Banco banco; 
@@ -216,8 +215,6 @@ public class TelaTransferir extends javax.swing.JFrame {
         this.setVisible(false);
         this.telaSaqueDepositoTransferir.setVisible(true);
     }//GEN-LAST:event_jButtonCancelarActionPerformed
-
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonCancelar;

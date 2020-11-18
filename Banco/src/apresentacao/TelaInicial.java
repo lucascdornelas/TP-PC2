@@ -20,7 +20,6 @@ public class TelaInicial extends javax.swing.JFrame {
         this.banco = new Banco();
         this.conta = new Conta();
         this.telaCriarConta = new TelaCadastro(banco, conta, this);
-        //this.telaPrincipalUsuario = new TelaPrincipalUsuario(banco);
     }
 
     @SuppressWarnings("unchecked")

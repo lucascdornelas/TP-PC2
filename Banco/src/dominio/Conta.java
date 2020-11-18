@@ -80,6 +80,5 @@ public class Conta {
 
     public void setNumeroDaContaDoNovoCliente(String numeroDaContaDoNovoCliente) {
         this.numeroDaContaDoNovoCliente = numeroDaContaDoNovoCliente;
-    }
-    
+    }  
 }

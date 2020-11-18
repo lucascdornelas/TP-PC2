@@ -58,20 +58,7 @@ public class Banco {
                     if(aux_conta.getNumero().equals(numeroContaASerFechada))
                     {
                         it_conta.remove();
-                        it_pessoa.remove();
-                        /*
-                        aux_pessoa.setNome(null);
-                        aux_pessoa.setLoginDaConta(null);
-                        aux_pessoa.setSenhaDaConta(0);
-                        aux_pessoa.setContato(new Contato(null,null));
-                        aux_pessoa.setEndereo(new Endereco(null, null, null, null, null));
-                        
-                        aux_conta.setNumero(null);
-                        aux_conta.setSaldoTotal(0);
-                        */
-                        
-                        
-                        
+                        it_pessoa.remove();                                              
                     }
                     
                 }
@@ -191,7 +178,6 @@ public class Banco {
                                 registrador ++;
                         }
                     }
-                    
                 }
             }
             

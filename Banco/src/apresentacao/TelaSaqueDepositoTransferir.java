@@ -24,8 +24,7 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
         this.nomeCliente = nomeCliente;       
         
         this.telaPrincipalUsuario = telaPrincipalUsuario;
-        
-        
+ 
         initComponents();
         inicializa();
     }
@@ -290,8 +289,6 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
         this.setVisible(false);
         this.telaTransferir.setVisible(true);
     }//GEN-LAST:event_jButtonTransferenciaActionPerformed
-
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
