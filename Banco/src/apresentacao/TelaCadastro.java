@@ -1,5 +1,6 @@
 package apresentacao;
 
+import Exception.NaoExisteDadosException;
 import dominio.Banco;
 import dominio.Conta;
 import dominio.ContaCorrente;
@@ -65,6 +66,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jRadioButtonContaCorrente = new javax.swing.JRadioButton();
         jRadioButtonContaPoupanca = new javax.swing.JRadioButton();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Novo Cliente - Banco Sudeste");
@@ -90,7 +92,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Nome/Razão Social:");
+        jLabel2.setText("Nome/Razão Social:*");
 
         jTextFieldNomeRazaoSocial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,17 +102,17 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         jLabel3.setText("Contato");
 
-        jLabel4.setText("Email:");
+        jLabel4.setText("Email:*");
 
         jLabel5.setText("Telefone:");
 
         jLabel6.setText("Endereço");
 
-        jLabel7.setText("Estado:");
+        jLabel7.setText("Estado:*");
 
         jLabel8.setText("Rua:");
 
-        jLabel9.setText("Cidade:");
+        jLabel9.setText("Cidade:*");
 
         jComboBoxEstado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SP", "MG", "RJ", "ES" }));
         jComboBoxEstado.addActionListener(new java.awt.event.ActionListener() {
@@ -150,6 +152,10 @@ public class TelaCadastro extends javax.swing.JFrame {
                 jRadioButtonContaPoupancaActionPerformed(evt);
             }
         });
+
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 2, 10)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("Todos os campos com * é obrigatório");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -200,30 +206,32 @@ public class TelaCadastro extends javax.swing.JFrame {
                         .addComponent(jLabel6)))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jRadioButtonContaCorrente)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel12)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jRadioButtonPessoaFisica)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
+                        .addGap(26, 26, 26)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jRadioButtonContaCorrente)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButtonPessoaFisica)
+                                    .addComponent(jTextFieldCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jRadioButtonPessoaJuridica)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jRadioButtonContaPoupanca)
+                                .addGap(151, 151, 151))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addGap(65, 65, 65)
                                 .addComponent(jLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                                .addComponent(jTextFieldCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jRadioButtonContaPoupanca)
-                        .addGap(151, 151, 151)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jRadioButtonPessoaJuridica)
+                                    .addComponent(jTextFieldCNPJ, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel14)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -281,7 +289,8 @@ public class TelaCadastro extends javax.swing.JFrame {
                     .addComponent(jRadioButtonContaPoupanca))
                 .addGap(12, 12, 12)
                 .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel14))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -307,18 +316,11 @@ public class TelaCadastro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jTextFieldNomeRazaoSocialActionPerformed(java.awt.event.ActionEvent evt) {                                                         
-    }
-    
-    private void jRadioButtonContaCorrenteActionPerformed(java.awt.event.ActionEvent evt) {                                                         
-    }
-
-    private void jRadioButtonContaPoupancaActionPerformed(java.awt.event.ActionEvent evt) {                                                         
-    }    
-    
-    private void jComboBoxEstadoActionPerformed(java.awt.event.ActionEvent evt) {                                                         
-    }     
+     
+    private void jTextFieldNomeRazaoSocialActionPerformed(java.awt.event.ActionEvent evt) {}
+    private void jComboBoxEstadoActionPerformed(java.awt.event.ActionEvent evt) {}
+    private void jRadioButtonContaCorrenteActionPerformed(java.awt.event.ActionEvent evt) {}
+    private void jRadioButtonContaPoupancaActionPerformed(java.awt.event.ActionEvent evt) {}
     
     private void jRadioButtonPessoaFisicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPessoaFisicaActionPerformed
         this.jTextFieldCPF.setEnabled(true);
@@ -327,41 +329,51 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
         String mensage = null;    
+        
+        try
+        {
+            //CRIANDO UMA PESSOA QUALQUER PARA INSERIR NO ARRAY EM BANCO
+            Endereco endereco = new Endereco(jTextFieldRua.getText(),jTextFieldNumero.getText(),jTextFieldBairro.getText(),jTextFieldCidade.getText(),jComboBoxEstado.getSelectedItem().toString());
+            Contato contato = new Contato(jTextFieldTelefone.getText(), jTextFieldEmail.getText());
+            conta.definindoNumeroDaConta();
 
-        //CRIANDO UMA PESSOA QUALQUER PARA INSERIR NO ARRAY EM BANCO
-        Endereco endereco = new Endereco(jTextFieldRua.getText(),jTextFieldNumero.getText(),jTextFieldBairro.getText(),jTextFieldCidade.getText(),jComboBoxEstado.getSelectedItem().toString());
-        Contato contato = new Contato(jTextFieldTelefone.getText(), jTextFieldEmail.getText());
-        conta.definindoNumeroDaConta();
-        
-        
-        if(this.jRadioButtonPessoaFisica.isSelected())
-        {
-            PessoaFisica pessoa = new PessoaFisica(jTextFieldCPF.getText(), jTextFieldNomeRazaoSocial.getText(), contato, endereco);
-            if(this.jRadioButtonContaCorrente.isSelected())
+
+            if(this.jRadioButtonPessoaFisica.isSelected())
             {
-                ContaCorrente conta = new ContaCorrente(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
-                mensage = banco.abrirConta(pessoa,conta);
+                PessoaFisica pessoa = new PessoaFisica(jTextFieldCPF.getText(), jTextFieldNomeRazaoSocial.getText(), contato, endereco);
+                if(this.jRadioButtonContaCorrente.isSelected())
+                {
+                    ContaCorrente conta = new ContaCorrente(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
+                    mensage = banco.abrirConta(pessoa,conta);
+                }
+                else
+                {
+                    ContaPoupanca conta = new ContaPoupanca(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
+                    mensage = banco.abrirConta(pessoa, conta);
+                }
             }
             else
             {
-                ContaPoupanca conta = new ContaPoupanca(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
-                mensage = banco.abrirConta(pessoa, conta);
+                PessoaJuridica pessoa = new PessoaJuridica(jTextFieldCNPJ.getText(), jTextFieldNomeRazaoSocial.getText(), contato, endereco);
+                if(this.jRadioButtonContaCorrente.isSelected())
+                {
+                    ContaCorrente conta = new ContaCorrente(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
+                    mensage = banco.abrirConta(pessoa, conta);
+                }
+                else
+                {
+                    ContaPoupanca conta = new ContaPoupanca(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
+                    mensage = banco.abrirConta(pessoa, conta);
+                }
             }
+            
+            JOptionPane.showMessageDialog(null,mensage ,"CONTA CRIADA COM SUCESSO!", JOptionPane.INFORMATION_MESSAGE);
         }
-        else
-        {
-            PessoaJuridica pessoa = new PessoaJuridica(jTextFieldCNPJ.getText(), jTextFieldNomeRazaoSocial.getText(), contato, endereco);
-            if(this.jRadioButtonContaCorrente.isSelected())
-            {
-                ContaCorrente conta = new ContaCorrente(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
-                mensage = banco.abrirConta(pessoa, conta);
-            }
-            else
-            {
-                ContaPoupanca conta = new ContaPoupanca(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
-                mensage = banco.abrirConta(pessoa, conta);
-            }
-        }
+                catch (NaoExisteDadosException ex)
+                {
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
+                }        
+
 
     this.jTextFieldTelefone.setText("");
     this.jTextFieldRua.setText("");
@@ -375,7 +387,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     this.buttonGroupPessoa.clearSelection();
     this.buttonGroupTipoDeConta.clearSelection();
     
-    JOptionPane.showMessageDialog(null,mensage ,"CONTA CRIADA COM SUCESSO!", JOptionPane.INFORMATION_MESSAGE);
+    
     this.setVisible(false);
     telaInicial.setVisible(true);
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
@@ -395,6 +407,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

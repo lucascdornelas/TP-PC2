@@ -1,6 +1,7 @@
 package dominio;
 
 import Exception.NaoExisteContaException;
+import Exception.NaoExisteDadosException;
 import Exception.NaoTemDinheiroException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -21,14 +22,61 @@ public class Banco {
         this.clientes = clientes;
     }
     
-    public String abrirConta(Pessoa pessoa, Conta conta)
+    public String abrirConta(Pessoa pessoa, Conta conta) throws NaoExisteDadosException
     {
-        pessoa.setContas(conta);
-        clientes.add(pessoa);
+        if(!((pessoa.getNome().equals("")) || (pessoa.getContato().getEmail().equals("")) 
+                || (pessoa.getEndereo().getCidade().equals("")) || (pessoa.getEndereo().getEstado().equals("")) ))
+        {
+            pessoa.setContas(conta);
+            clientes.add(pessoa);
+
+            String mensage = String.format("SEJA BEM VINDO AO NOSSO BANCO %s, SUA CONTA FOI CRIADA\nLOGIN: %s\nSENHA: %d",pessoa.getNome(),pessoa.getLoginDaConta(),pessoa.getSenhaDaConta());
+            return mensage; 
+        }
         
-        String mensage = String.format("SEJA BEM VINDO AO NOSSO BANCO %s, SUA CONTA FOI CRIADA\nLOGIN: %s\nSENHA: %d",pessoa.getNome(),pessoa.getLoginDaConta(),pessoa.getSenhaDaConta());
-        return mensage;
-        //JOptionPane.showMessageDialog(null,mensage ,"CONTA CRIADA COM SUCESSO!", JOptionPane.INFORMATION_MESSAGE);
+        else
+        {
+            throw new NaoExisteDadosException();
+        }
+
+    }
+    
+    public void fecharConta(String nomeDoCliente, Conta conta, String numeroContaASerFechada)
+    {
+        Iterator<Pessoa> it_pessoa = clientes.iterator();
+        
+        while(it_pessoa.hasNext())
+        {
+            Pessoa aux_pessoa = it_pessoa.next();
+            
+            if(aux_pessoa.getNome().equals(nomeDoCliente))
+            {
+                Iterator<Conta> it_conta = aux_pessoa.getContas().iterator();
+                while(it_conta.hasNext())
+                {
+                    Conta aux_conta = it_conta.next();
+                    if(aux_conta.getNumero().equals(numeroContaASerFechada))
+                    {
+                        it_conta.remove();
+                        it_pessoa.remove();
+                        /*
+                        aux_pessoa.setNome(null);
+                        aux_pessoa.setLoginDaConta(null);
+                        aux_pessoa.setSenhaDaConta(0);
+                        aux_pessoa.setContato(new Contato(null,null));
+                        aux_pessoa.setEndereo(new Endereco(null, null, null, null, null));
+                        
+                        aux_conta.setNumero(null);
+                        aux_conta.setSaldoTotal(0);
+                        */
+                        
+                        
+                        
+                    }
+                    
+                }
+            }
+        }
     }
     
     public String verificaLogin(String login, String senha)

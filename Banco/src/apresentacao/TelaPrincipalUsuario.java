@@ -1,6 +1,8 @@
 package apresentacao;
 
 import dominio.Banco;
+import dominio.Conta;
+import dominio.Pessoa;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -9,15 +11,18 @@ import javax.swing.JOptionPane;
 public class TelaPrincipalUsuario extends javax.swing.JFrame {
     private Banco banco;
     private String nomeCliente;
+    private Conta conta;
+    private String numeroConta;
     
     private TelaSaldoNaTela telaSaldoNaTela;
     private TelaSaqueDepositoTransferir telaSaqueDepositoTransferir;
-    //private TelaTransferir telaTransferir;
 
-    public TelaPrincipalUsuario(Banco banco, String nomeCliente) 
+    public TelaPrincipalUsuario(Banco banco, String nomeCliente, Conta conta, String numeroConta) 
     {
         this.banco = banco;
         this.nomeCliente = nomeCliente;
+        this.conta = conta;
+        this.numeroConta = numeroConta;
         
         this.telaSaldoNaTela = new TelaSaldoNaTela(this,banco,nomeCliente);
         this.telaSaqueDepositoTransferir = new TelaSaqueDepositoTransferir(this, banco, nomeCliente);
@@ -130,7 +135,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
                             .addComponent(jLabelDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -169,6 +174,10 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
     private void jButtonFecharMinhaContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFecharMinhaContaActionPerformed
         //APAGAR EM DISCO OS DADOS DA PESSOA E DA CONTA
+        banco.fecharConta(nomeCliente, conta,numeroConta);
+        JOptionPane.showMessageDialog(null, "Conta encerrada com sucesso", "Banco Sudeste", JOptionPane.INFORMATION_MESSAGE);
+        System.exit(0);
+        
     }//GEN-LAST:event_jButtonFecharMinhaContaActionPerformed
 
     private void jButtonSaqueDepositoTransferirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaqueDepositoTransferirActionPerformed

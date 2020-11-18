@@ -161,7 +161,7 @@ public class TelaInicial extends javax.swing.JFrame {
         if(nome != null)
         {
             JOptionPane.showMessageDialog(null,"OLÁ, SEJA BEM VINDO NOVAMENTE: "+nome ,"LOGIN", JOptionPane.INFORMATION_MESSAGE);
-            this.telaPrincipalUsuario = new TelaPrincipalUsuario(banco, nome);
+            this.telaPrincipalUsuario = new TelaPrincipalUsuario(banco, nome,conta, login);
             telaPrincipalUsuario.setVisible(true);
             this.setVisible(false);
         }else
