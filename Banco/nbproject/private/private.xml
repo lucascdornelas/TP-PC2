@@ -2,21 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/Exception/NaoExisteContaException.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaTransferir.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaPrincipalUsuario.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Contato.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaSaldoNaTela.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/Exception/NaoTemDinheiroException.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaInicial.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaSaqueDepositoTransferir.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/Exception/NaoExisteDadosException.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Endereco.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaCadastro.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Conta.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Banco.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Pessoa.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>
