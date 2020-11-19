@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class Pessoa {
-    
     private String nome;
     private Contato contato;
     private Endereco endereo;
