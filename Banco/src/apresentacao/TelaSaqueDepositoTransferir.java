@@ -143,7 +143,7 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 401, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -197,7 +197,7 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
                         .addComponent(jLabel5)))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonSaque)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonDeposito)
@@ -205,7 +205,7 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
                 .addComponent(jButtonTransferencia)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButtonVoltarAoMenuAnterior)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -252,15 +252,14 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Algarismo Inválido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
         }
         this.jTextFieldValor.setText("");
-        defineSaldo();
+        this.defineSaldo();
         this.setVisible(false);
         this.telaPrincipalUsuario.setVisible(true);
     }//GEN-LAST:event_jButtonSaqueActionPerformed
 
     private void jComboBoxContasDoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxContasDoClienteActionPerformed
         this.numeroDaConta = this.jComboBoxContasDoCliente.getSelectedItem().toString();
-        defineSaldo();
-        //this.telaTransferir = new TelaTransferir(this.banco, this.nomeCliente, this, this.numeroDaConta);
+        this.defineSaldo();
     }//GEN-LAST:event_jComboBoxContasDoClienteActionPerformed
 
     private void jButtonDepositoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDepositoActionPerformed
@@ -276,7 +275,7 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Algarismo Inválido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
         }
         this.jTextFieldValor.setText("");
-        defineSaldo();
+        this.defineSaldo();
         this.setVisible(false);
         this.telaPrincipalUsuario.setVisible(true); 
            

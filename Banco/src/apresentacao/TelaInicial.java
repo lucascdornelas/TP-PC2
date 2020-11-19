@@ -1,5 +1,6 @@
 package apresentacao;
 
+import Exception.NaoExisteContaException;
 import dominio.Banco;
 import dominio.Conta;
 import dominio.Pessoa;
@@ -155,21 +156,22 @@ public class TelaInicial extends javax.swing.JFrame {
         String login,nome;
         login = this.jFieldUsuario.getText();
         String senha = new String(this.jFieldSenha.getPassword());
-        nome = banco.verificaLogin(login, senha);
         
-        if(nome != null)
+        try
         {
+            nome = banco.verificaLogin(login, senha);
             JOptionPane.showMessageDialog(null,"OLÁ, SEJA BEM VINDO NOVAMENTE: "+nome ,"LOGIN", JOptionPane.INFORMATION_MESSAGE);
             this.telaPrincipalUsuario = new TelaPrincipalUsuario(banco, nome,conta, login);
             telaPrincipalUsuario.setVisible(true);
             this.setVisible(false);
-        }else
+        }
+
+        catch(NaoExisteContaException ex)
         {
             JOptionPane.showMessageDialog(null,"USUÁRIO OU SENHA INCORRETO" ,"LOGIN", JOptionPane.ERROR_MESSAGE);
             this.jFieldUsuario.setText("");
             this.jFieldSenha.setText("");
         }
-        
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     private void jButtonEsqueciMinhaSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEsqueciMinhaSenhaActionPerformed

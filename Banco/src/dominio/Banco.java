@@ -38,7 +38,6 @@ public class Banco {
         {
             throw new NaoExisteDadosException();
         }
-
     }
     
     public void fecharConta(String nomeDoCliente, Conta conta, String numeroContaASerFechada)
@@ -66,8 +65,9 @@ public class Banco {
         }
     }
     
-    public String verificaLogin(String login, String senha)
+    public String verificaLogin(String login, String senha) throws NaoExisteContaException
     {
+        int registrador = 0;
         Iterator<Pessoa> it = clientes.iterator();
         
         while(it.hasNext())
@@ -77,9 +77,14 @@ public class Banco {
             {
                 if(aux.getSenhaDaConta() == Integer.parseInt(senha))
                 {
+                    registrador++;
                     return aux.getNome();
                 }
             }
+        }
+        if(registrador == 0)
+        {
+            throw new NaoExisteContaException();
         }
         return null;
     }

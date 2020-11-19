@@ -2,7 +2,6 @@ package apresentacao;
 
 import dominio.Banco;
 import dominio.Conta;
-import dominio.Pessoa;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -135,7 +134,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
                             .addComponent(jLabelDate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -159,9 +158,9 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
                 .addComponent(jButtonSaldoOuDepositoOuTransferir, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonFecharMinhaConta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonSair)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -169,11 +168,11 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
     private void jButtonSaldoNaTelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaldoNaTelaActionPerformed
         this.setVisible(false);
+        this.telaSaldoNaTela.inicializa();
         this.telaSaldoNaTela.setVisible(true);
     }//GEN-LAST:event_jButtonSaldoNaTelaActionPerformed
 
     private void jButtonFecharMinhaContaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFecharMinhaContaActionPerformed
-        //APAGAR EM DISCO OS DADOS DA PESSOA E DA CONTA
         banco.fecharConta(nomeCliente, conta,numeroConta);
         JOptionPane.showMessageDialog(null, "Conta encerrada com sucesso", "Banco Sudeste", JOptionPane.INFORMATION_MESSAGE);
         System.exit(0);
