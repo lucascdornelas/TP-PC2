@@ -1,0 +1,5 @@
+Janela$1HandlerBotaoConfirma
+Janela
+Janela$1HandlerBotaoPular
+Janela$1HandlerBotaoReiniciar
+Janela$1HandlerBotaoNumerico

@@ -7,7 +7,7 @@ import java.util.Iterator;
 public class Pessoa {
     private String nome;
     private Contato contato;
-    private Endereco endereo;
+    private Endereco endereco;
     private ArrayList<Conta> contas;
     private String loginDaConta;
     private int senhaDaConta;
@@ -15,7 +15,7 @@ public class Pessoa {
     public Pessoa(String nome, Contato contato, Endereco endereo) {
         this.nome = nome;
         this.contato = contato;
-        this.endereo = endereo;
+        this.endereco = endereo;
         this.contas = new ArrayList<>();
         this.loginDaConta = "";
         this.senhaDaConta = 0;
@@ -56,12 +56,12 @@ public class Pessoa {
         this.contato = contato;
     }
 
-    public Endereco getEndereo() {
-        return endereo;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setEndereo(Endereco endereo) {
-        this.endereo = endereo;
+    public void setEndereco(Endereco endereo) {
+        this.endereco = endereo;
     }
 
     public ArrayList<Conta> getContas() {

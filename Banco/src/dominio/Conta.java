@@ -80,5 +80,12 @@ public class Conta {
 
     public void setNumeroDaContaDoNovoCliente(String numeroDaContaDoNovoCliente) {
         this.numeroDaContaDoNovoCliente = numeroDaContaDoNovoCliente;
-    }  
+    }
+
+    @Override
+    public String toString() {
+        return agencia + " " + numero + " " + numeroDaContaDoNovoCliente + " " + numeroDaContaDoUltimoCliente + " " + saldoTotal;
+    }
+    
+    
 }

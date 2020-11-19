@@ -5,10 +5,6 @@
  */
 package dominio;
 
-/**
- *
- * @author erick
- */
 public class ContaPoupanca extends Conta{
     
     private double rendimento;
@@ -16,7 +12,6 @@ public class ContaPoupanca extends Conta{
 
     public ContaPoupanca() {
         super();
-
         this.rendimento = 10;
         this.saldoInvestido = 0;
         renderDinheiro();
@@ -52,4 +47,11 @@ public class ContaPoupanca extends Conta{
     public void setSaldoInvestido(double saldoInvestido) {
         this.saldoInvestido = saldoInvestido;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " 2 " + rendimento + " " + saldoInvestido + "\n";
+    }
+    
+    
 }

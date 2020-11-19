@@ -40,4 +40,11 @@ public class ContaCorrente extends Conta {
     public void setTaxaMensal(double taxaMensal) {
         this.taxaMensal = taxaMensal;
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + " 1 " + saldoDisponivel + " " + taxaMensal + "\n";
+    }
+    
+    
 }

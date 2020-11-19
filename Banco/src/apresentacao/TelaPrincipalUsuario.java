@@ -186,6 +186,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSaqueDepositoTransferirActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        this.banco.salvarClientes();
         System.exit(0);
     }//GEN-LAST:event_jButtonSairActionPerformed
 

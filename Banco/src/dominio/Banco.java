@@ -5,6 +5,8 @@ import Exception.NaoExisteDadosException;
 import Exception.NaoTemDinheiroException;
 import java.util.ArrayList;
 import java.util.Iterator;
+import servicos.CreateTextFile;
+import servicos.ReadTextFile;
 
 public class Banco {
     
@@ -25,7 +27,7 @@ public class Banco {
     public String abrirConta(Pessoa pessoa, Conta conta) throws NaoExisteDadosException
     {
         if(!((pessoa.getNome().equals("")) || (pessoa.getContato().getEmail().equals("")) 
-                || (pessoa.getEndereo().getCidade().equals("")) || (pessoa.getEndereo().getEstado().equals("")) ))
+                || (pessoa.getEndereco().getCidade().equals("")) || (pessoa.getEndereco().getEstado().equals("")) ))
         {
             pessoa.setContas(conta);
             clientes.add(pessoa);
@@ -188,5 +190,9 @@ public class Banco {
             
             if(registrador == 0)
                 throw new NaoExisteContaException();
+    }
+    
+    public void salvarClientes(){
+        CreateTextFile.addRecords(this);
     }
 }

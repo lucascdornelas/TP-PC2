@@ -1,16 +1,16 @@
 package servicos;
 
 import dominio.Banco;
+import dominio.Conta;
 import dominio.Pessoa;
 import java.io.FileNotFoundException;         
 import java.util.ArrayList;
 import java.util.Formatter;               
 import java.util.FormatterClosedException;
 import java.util.NoSuchElementException;               
-import principal.Contato;
 
-public class CreateTextFile
-{
+public class CreateTextFile{
+    
    private static Formatter output; // outputs text to a file       
 
    // open file agenda.txt
@@ -35,30 +35,56 @@ public class CreateTextFile
                 URL = cliente.getLoginDaConta() + ".txt";
                 openFile(URL);
                 
+                String senha = String.valueOf(cliente.getSenhaDaConta());
+                String nome = cliente.getNome();
+                
+                output.format("%s\n", senha); 
+                output.format("Dados do Usuario:\n%s\n", nome); 
+                
+                String telefone = cliente.getContato().getTelefone();
+                String email = cliente.getContato().getEmail();
+                
+                output.format("%s\n%s\n", telefone, email); 
+                
+                String rua = cliente.getEndereco().getRua();
+                String numero = cliente.getEndereco().getNumero();
+                String bairro = cliente.getEndereco().getBairro();
+                String cidade = cliente.getEndereco().getCidade();
+                String estado = cliente.getEndereco().getEstado();
+                
+                output.format("%s\n%s\n%s\n%s\n%s\n", rua, numero, bairro, cidade, estado);
+                
+                ArrayList<Conta> contas = cliente.getContas();
+                
+                String conta = "";
+                
+                for(Conta c : contas){
+                    conta = c.toString();
+                    output.format("%s", conta);
+                }
+                
                 //Arquivo de cada Cliente
                 //Nome do arquivo: loginDaConta.txt
                 //Linhas:
-                //$ senha
+                //$ senha x
                 //$ Dados do Usuario:
-                //$ nome do cliente
-                //$ Contato:
-                //$ telefone 
-                //$ email
+                //$ nome do cliente x
+                //$ Contato: 
+                //$ telefone x
+                //$ email x
                 //$ Endereço:
-                //$ rua
-                //$ numero
-                //$ bairro;
-                //$ cidade;
-                //$ estado
-                //$ Contas
+                //$ rua x
+                //$ numero x
+                //$ bairro x
+                //$ cidade x
+                //$ estado x
+                //$ Contas (Loop) x
                     //$ agencia
                     //$ numero
                     //$ numeroDaContaDoNovoCliente
                     //$ numeroDaContaDoUltimoCliente
                     //$ saldoTotal
-                
-                output.format("%d %s %s %s\n", ); 
-                
+                    //$ tipo(?)
             }
                                         
         } 
@@ -69,7 +95,9 @@ public class CreateTextFile
         catch (NoSuchElementException elementException)
         {
             System.err.println("Invalid input. Please try again.");
-        } 
+        }
+        
+        closeFile();
 
    }
 
