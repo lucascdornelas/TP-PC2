@@ -4,6 +4,8 @@ import Exception.NaoExisteContaException;
 import dominio.Banco;
 import dominio.Conta;
 import dominio.Pessoa;
+import servicos.Memoria;
+
 import javax.swing.JOptionPane;
 
 public class TelaInicial extends javax.swing.JFrame {
@@ -21,6 +23,8 @@ public class TelaInicial extends javax.swing.JFrame {
         this.banco = new Banco();
         this.conta = new Conta();
         this.telaCriarConta = new TelaCadastro(banco, conta, this);
+        Memoria.lerPessoa(banco);
+
     }
 
     @SuppressWarnings("unchecked")
