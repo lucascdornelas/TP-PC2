@@ -3,6 +3,8 @@ package dominio;
 import Exception.NaoExisteContaException;
 import Exception.NaoExisteDadosException;
 import Exception.NaoTemDinheiroException;
+
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Iterator;
 import servicos.CreateTextFile;
@@ -13,7 +15,83 @@ public class Banco {
     private ArrayList<Pessoa> clientes;
 
     public Banco() {
+
         this.clientes = new ArrayList<>();
+
+        File diretorio = new File("pessoas");
+
+        for(int i = 0; i < diretorio.listFiles().length; i++){
+                // Criar diretorio separado para pessoas para facilitar contagem no for (editar)
+                ReadTextFile.openFile("pessoas/" + Integer.toString(i+1) + ".txt");
+                ArrayList<String> dadosPessoa = ReadTextFile.readRecords();
+
+                // Nome
+                String nome = dadosPessoa.get(2);
+                // Contato
+                String telefone = dadosPessoa.get(3);
+                String email = dadosPessoa.get(4);
+                Contato contato = new Contato(telefone, email);
+                // Endereco
+                String rua = dadosPessoa.get(5);
+                String numero = dadosPessoa.get(6);
+                String bairro = dadosPessoa.get(7);
+                String cidade = dadosPessoa.get(8);
+                String estado = dadosPessoa.get(9);
+                Endereco endereco = new Endereco(rua, numero, bairro, cidade, estado);
+
+                Pessoa pessoa = new Pessoa(nome, contato, endereco);
+
+                // Conta
+                String agencia = dadosPessoa.get(10);
+                String numeroDaConta = dadosPessoa.get(11);
+                String numeroContaNovoCliente = dadosPessoa.get(12);
+                String numeroContaUltimoCliente = dadosPessoa.get(13);
+                String Saldo = dadosPessoa.get(14);
+                String tipoConta = dadosPessoa.get(15);
+                String var1 = dadosPessoa.get(16);
+                String var2 = dadosPessoa.get(17);
+
+                if(tipoConta.equals("1")){
+                    Conta conta1 = new ContaCorrente(agencia, numeroContaNovoCliente, numeroContaUltimoCliente, Double.parseDouble(Saldo));
+                    pessoa.setContas(conta1);
+                }
+                else {
+                    Conta conta1 = new ContaPoupanca(agencia,numeroContaNovoCliente, numeroContaUltimoCliente, Double.parseDouble(Saldo));
+                    pessoa.setContas(conta1);
+                }
+
+
+                try {
+                    agencia = dadosPessoa.get(18);
+                    numeroDaConta = dadosPessoa.get(19);
+                    numeroContaNovoCliente = dadosPessoa.get(20);
+                    numeroContaUltimoCliente = dadosPessoa.get(21);
+                    Saldo = dadosPessoa.get(22);
+                    tipoConta = dadosPessoa.get(23);
+                    var1 = dadosPessoa.get(24);
+                    var2 = dadosPessoa.get(25);
+
+                    if(tipoConta.equals("1")){
+                        Conta conta2 = new ContaCorrente(agencia, numeroContaNovoCliente, numeroContaUltimoCliente, Double.parseDouble(Saldo));
+                        pessoa.setContas(conta2);
+                    }
+                    else {
+                        Conta conta2 = new ContaPoupanca(agencia,numeroContaNovoCliente, numeroContaUltimoCliente, Double.parseDouble(Saldo));
+                        pessoa.setContas(conta2);
+                    }
+
+                }
+                catch (Exception e){
+                    System.out.println("Apenas uma conta");
+                }
+
+                clientes.add(pessoa);
+
+                ReadTextFile.closeFile();
+
+            }
+
+
     }
 
     public ArrayList<Pessoa> getClientes() {
@@ -32,7 +110,8 @@ public class Banco {
             pessoa.setContas(conta);
             clientes.add(pessoa);
 
-            String mensage = String.format("SEJA BEM VINDO AO NOSSO BANCO %s, SUA CONTA FOI CRIADA\nLOGIN: %s\nSENHA: %d",pessoa.getNome(),pessoa.getLoginDaConta(),pessoa.getSenhaDaConta());
+            String mensage = String.format("SEJA BEM VINDO AO NOSSO BANCO %s, SUA CONTA FOI CRIADA\nLOGIN: %s\nSENHA: %d",
+                    pessoa.getNome(),pessoa.getLoginDaConta(),pessoa.getSenhaDaConta());
             return mensage; 
         }
         
