@@ -15,19 +15,24 @@ public class CreateTextFile{
 
    // open file agenda.txt
    public static void openFile(String URL){
-      try{
-         output = new Formatter(URL); // open the file
-      } catch (SecurityException securityException) {
-         System.err.println("Write permission denied. Terminating.");
-         System.exit(1); // terminate the program
-      } catch (FileNotFoundException fileNotFoundException) {
-         System.err.println("Error opening file. Terminating.");
-         System.exit(1); // terminate the program
-      } 
-   } 
+        //String mensage = null;
+        try {
+            output = new Formatter(URL); // open the file
+        } catch (SecurityException securityException) {
+            //mensage = ("Write permission denied. Terminating.");
+            System.err.println("Write permission denied. Terminating.");
+            System.exit(1); // terminate the program
+        } catch (FileNotFoundException fileNotFoundException) {
+            //mensage = ("Error opening file. Terminating.");
+            System.err.println("Error opening file. Terminating.");
+            System.exit(1); // terminate the program
+        }
+        //return mensage;
+    }
 
    // add records to file
    public static void addRecords(Banco b){
+       //String mensageReturn;
         try {
             ArrayList<Pessoa> clientes = b.getClientes();
             String URL = null;

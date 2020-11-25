@@ -16,15 +16,21 @@ public class TelaInicial extends javax.swing.JFrame {
     private Conta conta;
     private Pessoa pessoa;
     
+    private Memoria lerArquivos;
+    
     public TelaInicial() 
     {
         initComponents();
-        this.setVisible(true);
+        
         this.banco = new Banco();
+        this.lerArquivos = new Memoria(this.banco);
+        //lerArquivos.lerBanco();
+        this.setVisible(true);
+        
         this.conta = new Conta();
         this.telaCriarConta = new TelaCadastro(banco, conta, this);
-        Memoria.lerPessoa(banco);
-
+        //Memoria.lerPessoa(banco);
+        
     }
 
     @SuppressWarnings("unchecked")

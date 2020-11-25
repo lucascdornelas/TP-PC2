@@ -15,12 +15,7 @@ public class Banco {
     public ArrayList<Pessoa> clientes;
 
     public Banco() {
-
         this.clientes = new ArrayList<>();
-
-       
-
-
     }
 
     public ArrayList<Pessoa> getClientes() {
@@ -69,7 +64,6 @@ public class Banco {
                         it_conta.remove();
                         it_pessoa.remove();                                              
                     }
-                    
                 }
             }
         }

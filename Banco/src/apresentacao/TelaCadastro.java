@@ -329,7 +329,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
     private void jButtonCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCadastrarActionPerformed
         String mensage = null;    
-        
+        int numeroIdentificao;
         try
         {
             //CRIANDO UMA PESSOA QUALQUER PARA INSERIR NO ARRAY EM BANCO
@@ -340,6 +340,7 @@ public class TelaCadastro extends javax.swing.JFrame {
 
             if(this.jRadioButtonPessoaFisica.isSelected())
             {
+                numeroIdentificao = Integer.parseInt(jTextFieldCPF.getText());
                 PessoaFisica pessoa = new PessoaFisica(jTextFieldCPF.getText(), jTextFieldNomeRazaoSocial.getText(), contato, endereco);
                 if(this.jRadioButtonContaCorrente.isSelected())
                 {
@@ -354,6 +355,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
             else
             {
+                numeroIdentificao = Integer.parseInt(jTextFieldCNPJ.getText());
                 PessoaJuridica pessoa = new PessoaJuridica(jTextFieldCNPJ.getText(), jTextFieldNomeRazaoSocial.getText(), contato, endereco);
                 if(this.jRadioButtonContaCorrente.isSelected())
                 {
@@ -372,6 +374,9 @@ public class TelaCadastro extends javax.swing.JFrame {
         catch (NaoExisteDadosException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
         }   
+        catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(null, "CPF/CNPJ Inválido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
+        }
 
 
     this.jTextFieldTelefone.setText("");
@@ -385,7 +390,6 @@ public class TelaCadastro extends javax.swing.JFrame {
     this.jTextFieldBairro.setText("");
     this.buttonGroupPessoa.clearSelection();
     this.buttonGroupTipoDeConta.clearSelection();
-    
     
     this.setVisible(false);
     telaInicial.setVisible(true);

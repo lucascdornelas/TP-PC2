@@ -9,10 +9,19 @@ import java.util.ArrayList;
    para inicializacao de uma variavel do tipo pessoa. */
 
 public class Memoria {
+    private Banco banco;
 
+    public Memoria(Banco banco) 
+    {
+        this.banco = banco;
+    }
+   
     /* Recebe uma variavel pessoa e grava seus dados
     em um arquivo com seu nome no diretorio "pessoas". */
-    public static void gravarPessoa(Pessoa pessoa){
+    
+ /*   
+    public static void gravarPessoa(Pessoa pessoa)
+    {
         File diretorio = new File("pessoas");
         File arquivo = new File("");
 
@@ -29,7 +38,8 @@ public class Memoria {
         // Cria um arquivo para a pessoa caso ela nao exista
         if(!existe){
             arquivo = new File("pessoa/" + pessoa.getNome() + ".txt");
-            try{
+            try
+            {
                 arquivo.createNewFile();
             }
             catch (Exception e){
@@ -45,7 +55,7 @@ public class Memoria {
             // Adiciona nome da pessoa no arquivo
             fileWriter.write(String.format("%s\n", pessoa.getNome()));
 
-            /* Implementar para demais tipos de dado.*/
+            // Implementar para demais tipos de dado.
 
             fileWriter.close();
         }
@@ -53,13 +63,15 @@ public class Memoria {
             System.out.println("Nao foi possivel acessar arquivo.");
         }
     }
-
-    public static void lerPessoa(Banco banco){
-        // Retornar uma array contendo tudo?
-
+*/
+    public void lerBanco()
+    {
+        //String[] arquivos = 
+        // Retornar uma array contendo tudo? sim
         File diretorio = new File("pessoas");
 
-        for(int i = 0; i < diretorio.listFiles().length; i++){
+        for(int i = 0; i < 10; i++)
+        {
             // Criar diretorio separado para pessoas para facilitar contagem no for (editar)
             ReadTextFile.openFile("pessoas/" + Integer.toString(i+1) + ".txt");
             ArrayList<String> dadosPessoa = ReadTextFile.readRecords();
@@ -102,8 +114,8 @@ public class Memoria {
                 pessoa.setContas(conta1);
             }
 
-
-            try {
+            try 
+            {
                 words = dadosPessoa.get(11).split(" ");
                 agencia = words[0] ;
                 numeroDaConta = words[1];
@@ -126,18 +138,17 @@ public class Memoria {
                 }
 
             }
-            catch (Exception e){
+            catch (Exception e)
+            {
                 System.out.println("Apenas uma conta cadastrada");
             }
 
             banco.clientes.add(pessoa);
 
             ReadTextFile.closeFile();
-
         }
-
-
-
+        int a = 10;
+        //return this.banco;
     }
 
 }
