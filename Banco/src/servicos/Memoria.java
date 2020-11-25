@@ -14,7 +14,7 @@ public class Memoria {
     public Memoria(Banco banco) {
         this.banco = banco;
     }
-   
+      
     public void lerBanco(){
         //String[] arquivos = 
         // Retornar uma array contendo tudo? sim
