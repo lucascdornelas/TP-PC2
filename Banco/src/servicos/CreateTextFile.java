@@ -17,7 +17,7 @@ public class CreateTextFile{
    public static void openFile(String URL){
         //String mensage = null;
         try {
-            output = new Formatter(URL); // open the file
+            output = new Formatter("./pessoas/" + URL); // open the file
         } catch (SecurityException securityException) {
             //mensage = ("Write permission denied. Terminating.");
             System.err.println("Write permission denied. Terminating.");

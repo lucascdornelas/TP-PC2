@@ -21,13 +21,21 @@ public class Pessoa {
         this.senhaDaConta = 0;
     }
     
-    public void definindoLoginESenha()
-    {
+    public Pessoa(String nome, Contato contato, Endereco endereo, String login, int senha) {
+        this.nome = nome;
+        this.contato = contato;
+        this.endereco = endereo;
+        this.contas = new ArrayList<Conta>();
+        this.loginDaConta = login;
+        this.senhaDaConta = senha;
+    }
+    
+    public void definindoLoginESenha(){
         SecureRandom gerador = new SecureRandom();
         Iterator<Conta> it = contas.iterator();
         
-        while(it.hasNext())
-        {
+        while(it.hasNext()){
+            
             Conta aux = it.next();            
             loginDaConta = aux.getnumeroDaContaDoNovoCliente();
             senhaDaConta = gerador.nextInt(1000);
@@ -70,7 +78,10 @@ public class Pessoa {
 
     public void setContas(Conta contas) {
         this.contas.add(contas);
-        definindoLoginESenha();
+        
+        if(this.senhaDaConta == 0){
+            definindoLoginESenha();
+        }
     }
 
     public String getLoginDaConta() {
@@ -88,4 +99,11 @@ public class Pessoa {
     public void setSenhaDaConta(int senhaDaConta) {
         this.senhaDaConta = senhaDaConta;
     }
+
+    @Override
+    public String toString() {
+        return "Pessoa{" + "nome=" + nome + ", contato=" + contato.toString() + ", endereco=" + endereco + ", loginDaConta=" + loginDaConta + ", senhaDaConta=" + senhaDaConta + '}';
+    }
+    
+    
 }

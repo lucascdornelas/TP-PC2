@@ -21,16 +21,29 @@ public class TelaInicial extends javax.swing.JFrame {
     public TelaInicial() 
     {
         initComponents();
-        
         this.banco = new Banco();
+        
         this.lerArquivos = new Memoria(this.banco);
-        //lerArquivos.lerBanco();
+        lerArquivos.lerBanco();
+        
         this.setVisible(true);
         
-        this.conta = new Conta();
-        this.telaCriarConta = new TelaCadastro(banco, conta, this);
-        //Memoria.lerPessoa(banco);
         
+        int pessoasCadastradas = banco.getClientes().size() - 1;
+        if( pessoasCadastradas > 0){
+            Pessoa p = this.banco.getClientes().get(pessoasCadastradas);
+            
+            String agencia = p.getContas().get(0).getAgencia();
+            String numeroDaContaDoNovoCliente = p.getContas().get(0).getNumeroDaContaDoNovoCliente();
+            String numeroDaContaDoUltimoCliente = p.getContas().get(0).getNumeroDaContaDoUltimoCliente();
+            
+            this.conta = new Conta(agencia, numeroDaContaDoNovoCliente, numeroDaContaDoUltimoCliente, 0);
+        }
+        else{
+            this.conta = new Conta();
+        }
+        
+        this.telaCriarConta = new TelaCadastro(banco, conta, this);        
     }
 
     @SuppressWarnings("unchecked")

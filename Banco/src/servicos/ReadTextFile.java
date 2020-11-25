@@ -14,26 +14,32 @@ public class ReadTextFile{
 
     //open file
     public static void openFile(String arquivoURL){
-      try
-      {
-         input = new Scanner(Paths.get(arquivoURL)); 
-      } 
-      catch (IOException ioException)
-      {
-         System.err.println("Error opening file. Terminating.");
-         System.exit(1);
-      } 
+        try
+        {
+            input = new Scanner(Paths.get(arquivoURL)); 
+        } 
+        catch (IOException ioException)
+        {
+            System.err.println("Error opening file. Terminating.");
+            System.exit(1);
+        } 
    }
 
     //read record from file
     public static ArrayList<String> readRecords(){
-       ArrayList<String> palavras = new ArrayList();
+        ArrayList<String> palavras = new ArrayList();
+        
         try 
-        {         
-            String[] _palavras = input.nextLine().split(" ");
-            for(int i = 0; i < _palavras.length; i++){
-                palavras.add(_palavras[i]);
+        {
+            while(input.hasNext()){
+                String a = input.nextLine();
+                palavras.add(a);
             }
+            
+//            String[] _palavras = input.nextLine().split(" ");
+//            for(int i = 0; i < _palavras.length; i++){
+//                palavras.add(_palavras[i]);
+//            }
         } 
         catch (NoSuchElementException elementException)
         {

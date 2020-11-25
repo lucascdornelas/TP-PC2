@@ -20,8 +20,7 @@ public class ContaCorrente extends Conta {
         this.cobrandoTaxa();
     }
     
-    void cobrandoTaxa()
-    {
+    void cobrandoTaxa(){
         setSaldoDisponivel(getSaldoDisponivel() - this.taxaMensal);
         super.setSaldoTotal(saldoDisponivel);
     }

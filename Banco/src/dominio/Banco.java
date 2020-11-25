@@ -12,7 +12,7 @@ import servicos.ReadTextFile;
 
 public class Banco {
     
-    public ArrayList<Pessoa> clientes;
+    private ArrayList<Pessoa> clientes;
 
     public Banco() {
         this.clientes = new ArrayList<>();
@@ -74,8 +74,8 @@ public class Banco {
         int registrador = 0;
         Iterator<Pessoa> it = clientes.iterator();
         
-        while(it.hasNext())
-        {
+        while(it.hasNext()){
+            
             Pessoa aux = it.next();
             if(aux.getLoginDaConta().equals(login))
             {
