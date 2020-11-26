@@ -30,6 +30,11 @@ public class TelaInicial extends javax.swing.JFrame {
         lerArquivos.lerBanco();
         
         subirParaAMemoria();
+        
+        for(Pessoa p : banco.getClientes()){
+            System.out.println(p.toString());
+        }
+        
         this.setVisible(true);
         
         
@@ -39,9 +44,13 @@ public class TelaInicial extends javax.swing.JFrame {
     
     private void subirParaAMemoria()
     {
-        int pessoasCadastradas = banco.getClientes().size() -1;
-        if( pessoasCadastradas+1 > 0){
+        int pessoasCadastradas = banco.getClientes().size() - 1;
+        
+        if( pessoasCadastradas + 1 > 0){
             Pessoa p = this.banco.getClientes().get(pessoasCadastradas);
+            int index = p.getContas().size();
+            
+            System.out.println(p.toString());
             
             String agencia = p.getContas().get(0).getAgencia();
             String numeroDaContaDoNovoCliente = p.getContas().get(0).getNumeroDaContaDoNovoCliente();

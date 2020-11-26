@@ -355,7 +355,7 @@ public class TelaCadastro extends javax.swing.JFrame {
                 if(this.jRadioButtonContaCorrente.isSelected())
                 {
                     ContaCorrente conta = new ContaCorrente(this.conta.getAgencia(), this.conta.getnumeroDaContaDoNovoCliente(), this.conta.getNumeroDaContaDoUltimoCliente(), this.conta.getSaldoTotal());
-                    mensage = banco.abrirConta(pessoa,conta);
+                    mensage = banco.abrirConta(pessoa, conta);
                 }
                 else
                 {

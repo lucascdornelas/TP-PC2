@@ -32,6 +32,7 @@ public class CreateTextFile{
 
    // add records to file
    public static void addRecords(Banco b){
+       
        //String mensageReturn;
         try {
             ArrayList<Pessoa> clientes = b.getClientes();
@@ -64,19 +65,19 @@ public class CreateTextFile{
                 String cidade = cliente.getEndereco().getCidade();
                 String estado = cliente.getEndereco().getEstado();
                 
-                output.format("%s\n%s\n%s\n%s\n%s\n", rua, numero, bairro, cidade, estado);
+                String id = cliente.getId();
+                
+                output.format("%s\n%s\n%s\n%s\n%s\n%s\n", rua, numero, bairro, cidade, estado, id);
                 
                 ArrayList<Conta> contas = cliente.getContas();
                 
                 String conta = "";
-                
                 for(Conta c : contas){
                     conta = c.toString();
                     output.format("%s", conta);
                 }
                 
-                String id = cliente.getId();
-                output.format("%s", id);
+                
                 closeFile();
             }
         } 

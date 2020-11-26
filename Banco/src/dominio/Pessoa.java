@@ -78,7 +78,7 @@ public class Pessoa {
     public ArrayList<Conta> getContas() {
         return contas;
     }
-
+    
     public void setContas(Conta contas) {
         this.contas.add(contas);
         
@@ -111,7 +111,13 @@ public class Pessoa {
         this.id = id;
     }
 
-    
+    public boolean equals(Pessoa p){
+        if(this.getId().equals(p.getId())){
+            return true;
+        }else{
+            return false;
+        }
+    }
     
     
 }

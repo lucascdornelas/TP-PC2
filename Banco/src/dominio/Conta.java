@@ -18,6 +18,7 @@ public class Conta {
 
     public Conta(String agencia, String numeroDaContaDoNovoCliente, String numeroDaContaDoUltimoCliente, double saldoTotal) {
         this.agencia = agencia;
+        this.numero = numeroDaContaDoNovoCliente;
         this.numeroDaContaDoNovoCliente = numeroDaContaDoNovoCliente;
         this.numeroDaContaDoUltimoCliente = numeroDaContaDoUltimoCliente;
         this.saldoTotal = saldoTotal;

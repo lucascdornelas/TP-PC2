@@ -27,23 +27,48 @@ public class Banco {
         this.clientes = clientes;
     }
     
-    public String abrirConta(Pessoa pessoa, Conta conta) throws NaoExisteDadosException
-    {
-        if(!((pessoa.getNome().equals("")) || (pessoa.getContato().getEmail().equals("")) 
-                || (pessoa.getEndereco().getCidade().equals("")) || (pessoa.getEndereco().getEstado().equals("")) ))
-        {
-            pessoa.setContas(conta);
-            clientes.add(pessoa);
+    public String abrirConta(Pessoa pessoa, Conta conta) throws NaoExisteDadosException {
+        
+        String mensage = "";
+        
+        if(this.getClientes().isEmpty()){
+            if(!((pessoa.getNome().equals("")) || (pessoa.getContato().getEmail().equals("")) || (pessoa.getEndereco().getCidade().equals("")) || (pessoa.getEndereco().getEstado().equals("")) )){
+                
+                pessoa.setContas(conta);
+                clientes.add(pessoa);
 
-            String mensage = String.format("SEJA BEM VINDO AO NOSSO BANCO %s, SUA CONTA FOI CRIADA\nLOGIN: %s\nSENHA: %d",
-                    pessoa.getNome(),pessoa.getLoginDaConta(),pessoa.getSenhaDaConta());
-            return mensage; 
+                mensage = String.format("SEJA BEM VINDO AO NOSSO BANCO %s, SUA CONTA FOI CRIADA\nLOGIN: %s\nSENHA: %d",
+                        pessoa.getNome(),pessoa.getLoginDaConta(),pessoa.getSenhaDaConta());
+               }
+
+            else{
+                throw new NaoExisteDadosException();
+            }
+        }else{
+            for(Pessoa p : this.getClientes()){
+                if(p.equals(pessoa)){
+                    p.setContas(conta);
+                    mensage = "Conta Adicionada ao Usuario já cadastrado anteriormente!";
+
+                }else{
+                    if(!((pessoa.getNome().equals("")) || (pessoa.getContato().getEmail().equals("")) 
+                    || (pessoa.getEndereco().getCidade().equals("")) || (pessoa.getEndereco().getEstado().equals("")) ))
+                    {
+                        pessoa.setContas(conta);
+                        clientes.add(pessoa);
+
+                        mensage = String.format("SEJA BEM VINDO AO NOSSO BANCO %s, SUA CONTA FOI CRIADA\nLOGIN: %s\nSENHA: %d",
+                                pessoa.getNome(),pessoa.getLoginDaConta(),pessoa.getSenhaDaConta());
+                    }
+
+                    else{
+                        throw new NaoExisteDadosException();
+                    }
+                }        
+            }
         }
         
-        else
-        {
-            throw new NaoExisteDadosException();
-        }
+        return mensage;
     }
     
     public void fecharConta(String nomeDoCliente, Conta conta, String numeroContaASerFechada)
