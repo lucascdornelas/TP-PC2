@@ -31,7 +31,7 @@ public class Memoria {
             for(String d : dadosPessoa){
                 System.out.println(d);
             }
-            
+            System.out.println(dadosPessoa.get(0).toString());
             int senha = Integer.parseInt(dadosPessoa.get(0));
 
             // Nome

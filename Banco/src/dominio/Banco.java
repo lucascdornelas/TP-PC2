@@ -195,6 +195,7 @@ public class Banco {
     }
     
     public void salvarClientes(){
+        
         CreateTextFile.addRecords(this);
     }
 }

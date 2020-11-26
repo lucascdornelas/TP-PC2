@@ -5,13 +5,16 @@
         <group>
             <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaTransferir.java</file>
             <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaPrincipalUsuario.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaCadastro.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Banco.java</file>
             <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaSaldoNaTela.java</file>
-            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/servicos/Memoria.java</file>
             <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/servicos/CreateTextFile.java</file>
             <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaInicial.java</file>
             <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaSaqueDepositoTransferir.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/ContaCorrente.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/apresentacao/TelaCadastro.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Conta.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Banco.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/servicos/Memoria.java</file>
+            <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/dominio/Pessoa.java</file>
             <file>file:/C:/Users/erick/Documents/GitHub/TP-PC2/Banco/src/servicos/ReadTextFile.java</file>
         </group>
     </open-files>

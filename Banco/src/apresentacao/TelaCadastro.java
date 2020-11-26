@@ -12,7 +12,6 @@ import dominio.PessoaFisica;
 import dominio.PessoaJuridica;
 import javax.swing.JOptionPane;
 
-
 public class TelaCadastro extends javax.swing.JFrame {
     
     private final Banco banco;
@@ -67,6 +66,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jRadioButtonContaCorrente = new javax.swing.JRadioButton();
         jRadioButtonContaPoupanca = new javax.swing.JRadioButton();
         jLabel14 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Novo Cliente - Banco Sudeste");
@@ -157,6 +157,13 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Todos os campos com * é obrigatório");
 
+        jButton2.setText("Voltar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -199,15 +206,6 @@ public class TelaCadastro extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(259, 259, 259)
-                        .addComponent(jLabel3))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(262, 262, 262)
-                        .addComponent(jLabel6)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jRadioButtonContaCorrente)
@@ -233,6 +231,16 @@ public class TelaCadastro extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel14)))
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(259, 259, 259)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(262, 262, 262)
+                        .addComponent(jLabel6)))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,6 +297,8 @@ public class TelaCadastro extends javax.swing.JFrame {
                     .addComponent(jRadioButtonContaPoupanca))
                 .addGap(12, 12, 12)
                 .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel14))
         );
@@ -323,6 +333,7 @@ public class TelaCadastro extends javax.swing.JFrame {
     private void jRadioButtonContaPoupancaActionPerformed(java.awt.event.ActionEvent evt) {}
     
     private void jRadioButtonPessoaFisicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPessoaFisicaActionPerformed
+        this.jTextFieldCNPJ.setText("");
         this.jTextFieldCPF.setEnabled(true);
         this.jTextFieldCNPJ.setEnabled(false);
     }//GEN-LAST:event_jRadioButtonPessoaFisicaActionPerformed
@@ -336,7 +347,6 @@ public class TelaCadastro extends javax.swing.JFrame {
             Endereco endereco = new Endereco(jTextFieldRua.getText(),jTextFieldNumero.getText(),jTextFieldBairro.getText(),jTextFieldCidade.getText(),jComboBoxEstado.getSelectedItem().toString());
             Contato contato = new Contato(jTextFieldTelefone.getText(), jTextFieldEmail.getText());
             conta.definindoNumeroDaConta();
-
 
             if(this.jRadioButtonPessoaFisica.isSelected())
             {
@@ -368,7 +378,6 @@ public class TelaCadastro extends javax.swing.JFrame {
                     mensage = banco.abrirConta(pessoa, conta);
                 }
             }
-            
             JOptionPane.showMessageDialog(null,mensage ,"CONTA CRIADA COM SUCESSO!", JOptionPane.INFORMATION_MESSAGE);
         }
         catch (NaoExisteDadosException ex) {
@@ -377,7 +386,6 @@ public class TelaCadastro extends javax.swing.JFrame {
         catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(null, "CPF/CNPJ Inválido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
         }
-
 
     this.jTextFieldTelefone.setText("");
     this.jTextFieldRua.setText("");
@@ -391,19 +399,27 @@ public class TelaCadastro extends javax.swing.JFrame {
     this.buttonGroupPessoa.clearSelection();
     this.buttonGroupTipoDeConta.clearSelection();
     
+    this.banco.salvarClientes();
     this.setVisible(false);
     telaInicial.setVisible(true);
     }//GEN-LAST:event_jButtonCadastrarActionPerformed
 
     private void jRadioButtonPessoaJuridicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonPessoaJuridicaActionPerformed
+        this.jTextFieldCPF.setText("");
         this.jTextFieldCNPJ.setEnabled(true);
         this.jTextFieldCPF.setEnabled(false);
     }//GEN-LAST:event_jRadioButtonPessoaJuridicaActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        this.setVisible(false);
+        this.telaInicial.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroupPessoa;
     private javax.swing.ButtonGroup buttonGroupTipoDeConta;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBoxEstado;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

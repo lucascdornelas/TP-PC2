@@ -31,15 +31,12 @@ public class ReadTextFile{
         
         try 
         {
-            while(input.hasNext()){
+            while(input.hasNext())
+            {
                 String a = input.nextLine();
                 palavras.add(a);
             }
             
-//            String[] _palavras = input.nextLine().split(" ");
-//            for(int i = 0; i < _palavras.length; i++){
-//                palavras.add(_palavras[i]);
-//            }
         } 
         catch (NoSuchElementException elementException)
         {

@@ -86,6 +86,4 @@ public class Conta {
     public String toString() {
         return agencia + " " + numero + " " + numeroDaContaDoNovoCliente + " " + numeroDaContaDoUltimoCliente + " " + saldoTotal;
     }
-    
-    
 }

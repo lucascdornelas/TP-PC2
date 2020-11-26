@@ -7,6 +7,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Formatter;               
 import java.util.FormatterClosedException;
+import java.util.Iterator;
 import java.util.NoSuchElementException;               
 
 public class CreateTextFile{
@@ -36,7 +37,49 @@ public class CreateTextFile{
         try {
             ArrayList<Pessoa> clientes = b.getClientes();
             String URL = null;
-            for(Pessoa cliente : clientes){
+            
+            Iterator<Pessoa> it = clientes.iterator();
+            
+            while(it.hasNext())
+            {
+                Pessoa cliente = it.next();
+                
+                URL = cliente.getLoginDaConta() + ".txt";
+                openFile(URL);
+                
+                String senha = String.valueOf(cliente.getSenhaDaConta());
+                String nome = cliente.getNome();
+                
+              
+                output.format("%s\n", senha); 
+                output.format("Dados do Usuario:\n%s\n", nome); 
+                
+                String telefone = cliente.getContato().getTelefone();
+                String email = cliente.getContato().getEmail();
+                
+                output.format("%s\n%s\n", telefone, email); 
+                
+                String rua = cliente.getEndereco().getRua();
+                String numero = cliente.getEndereco().getNumero();
+                String bairro = cliente.getEndereco().getBairro();
+                String cidade = cliente.getEndereco().getCidade();
+                String estado = cliente.getEndereco().getEstado();
+                
+                output.format("%s\n%s\n%s\n%s\n%s\n", rua, numero, bairro, cidade, estado);
+                
+                ArrayList<Conta> contas = cliente.getContas();
+                
+                String conta = "";
+                
+                for(Conta c : contas){
+                    conta = c.toString();
+                    output.format("%s", conta);
+                }
+                closeFile();
+            }
+            /*
+            for(Pessoa cliente : clientes)
+            {
                 URL = cliente.getLoginDaConta() + ".txt";
                 openFile(URL);
                 
@@ -91,7 +134,8 @@ public class CreateTextFile{
                     //$ saldoTotal
                     //$ tipo(?)
             }
-                                        
+                */  
+            closeFile();
         } 
         catch (FormatterClosedException formatterClosedException)
         {
@@ -102,13 +146,12 @@ public class CreateTextFile{
             System.err.println("Invalid input. Please try again.");
         }
         
-        closeFile();
-
    }
 
    // close file
    public static void closeFile(){
       if (output != null)
          output.close();
+         
    } 
 } // end class CreateTextFile
