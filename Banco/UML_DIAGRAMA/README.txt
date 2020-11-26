@@ -8,8 +8,8 @@
 * Bruna Gomes Camilo			                              			 	         *
 * Erick Henrique Dutra de Souza				              			         *
 * Leonardo Mendes de Araújo					      			         *
-* Lucas						                      			         *
-* Tulio								      		         *
+* Lucas Cota Dornelas				                      			         *
+* Túlio Ferreira Horta						    		         *
 * 										         *
 * Diagrama UML elaborado via software Eclipse, utilizando "The ObjectAid UML Explorer for Eclipse IDE".         *	  
 * 										         *

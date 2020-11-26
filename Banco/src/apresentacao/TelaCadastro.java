@@ -77,7 +77,7 @@ public class TelaCadastro extends javax.swing.JFrame {
         jLabel1.setText("Cadastro - Banco SUDESTE");
 
         buttonGroupPessoa.add(jRadioButtonPessoaFisica);
-        jRadioButtonPessoaFisica.setText("Pessoa Física");
+        jRadioButtonPessoaFisica.setText("Pessoa Fisica");
         jRadioButtonPessoaFisica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButtonPessoaFisicaActionPerformed(evt);
