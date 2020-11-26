@@ -92,7 +92,7 @@ public class TelaCadastro extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Nome/Razão Social:*");
+        jLabel2.setText("Nome/Razao Social:*");
 
         jTextFieldNomeRazaoSocial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

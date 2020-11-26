@@ -75,7 +75,7 @@ public class TelaTransferir extends javax.swing.JFrame {
         jLabelDate.setForeground(new java.awt.Color(0, 153, 0));
         jLabelDate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel2.setText("Olá,");
+        jLabel2.setText("Ola,");
 
         jLabelNomeDoCliente.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         jLabelNomeDoCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

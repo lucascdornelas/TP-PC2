@@ -107,7 +107,7 @@
   <SubComponents>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Ol&#xe1;,"/>
+        <Property name="text" type="java.lang.String" value="Ola,"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonSaldoNaTela">

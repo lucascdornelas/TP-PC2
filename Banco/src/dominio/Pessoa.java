@@ -11,23 +11,26 @@ public class Pessoa {
     private ArrayList<Conta> contas;
     private String loginDaConta;
     private int senhaDaConta;
+    private String id;
 
-    public Pessoa(String nome, Contato contato, Endereco endereo) {
+    public Pessoa(String nome, Contato contato, Endereco endereo, String id) {
         this.nome = nome;
         this.contato = contato;
         this.endereco = endereo;
         this.contas = new ArrayList<>();
         this.loginDaConta = "";
         this.senhaDaConta = 0;
+        this.id = id;
     }
     
-    public Pessoa(String nome, Contato contato, Endereco endereo, String login, int senha) {
+    public Pessoa(String nome, Contato contato, Endereco endereo, String login, int senha, String id) {
         this.nome = nome;
         this.contato = contato;
         this.endereco = endereo;
         this.contas = new ArrayList<Conta>();
         this.loginDaConta = login;
         this.senhaDaConta = senha;
+        this.id = id;
     }
     
     public void definindoLoginESenha(){
@@ -100,10 +103,15 @@ public class Pessoa {
         this.senhaDaConta = senhaDaConta;
     }
 
-    @Override
-    public String toString() {
-        return "Pessoa{" + "nome=" + nome + ", contato=" + contato.toString() + ", endereco=" + endereco + ", loginDaConta=" + loginDaConta + ", senhaDaConta=" + senhaDaConta + '}';
+    public String getId() {
+        return id;
     }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    
     
     
 }

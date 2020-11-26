@@ -16,6 +16,9 @@ public class TelaInicial extends javax.swing.JFrame {
     private Conta conta;
     private Pessoa pessoa;
     
+    private String nome;
+    private String id;
+    
     private Memoria lerArquivos;
     
     public TelaInicial() 
@@ -26,9 +29,16 @@ public class TelaInicial extends javax.swing.JFrame {
         this.lerArquivos = new Memoria(this.banco);
         lerArquivos.lerBanco();
         
+        subirParaAMemoria();
         this.setVisible(true);
         
         
+        
+        this.telaCriarConta = new TelaCadastro(banco, conta, this);        
+    }
+    
+    private void subirParaAMemoria()
+    {
         int pessoasCadastradas = banco.getClientes().size() -1;
         if( pessoasCadastradas+1 > 0){
             Pessoa p = this.banco.getClientes().get(pessoasCadastradas);
@@ -41,7 +51,6 @@ public class TelaInicial extends javax.swing.JFrame {
         else{
             this.conta = new Conta();
         }
-        this.telaCriarConta = new TelaCadastro(banco, conta, this);        
     }
 
     @SuppressWarnings("unchecked")
@@ -82,7 +91,7 @@ public class TelaInicial extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Usuário: ");
+        jLabel2.setText("Usuario: ");
 
         jLabel3.setText("Senha: ");
 
@@ -174,15 +183,18 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCriarContaActionPerformed
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
-        String login,nome;
+        String login;
+        String retorno[];
         login = this.jFieldUsuario.getText();
         String senha = new String(this.jFieldSenha.getPassword());
         
         try
         {
-            nome = banco.verificaLogin(login, senha);
+            retorno = banco.verificaLogin(login, senha);
+            this.nome = retorno[0].toString();
+            this.id = retorno[1].toString();
             JOptionPane.showMessageDialog(null,"OLÁ, SEJA BEM VINDO NOVAMENTE: "+nome ,"LOGIN", JOptionPane.INFORMATION_MESSAGE);
-            this.telaPrincipalUsuario = new TelaPrincipalUsuario(banco, nome,conta, login);
+            this.telaPrincipalUsuario = new TelaPrincipalUsuario(banco, nome,id,conta, login);
             telaPrincipalUsuario.setVisible(true);
             this.setVisible(false);
         }

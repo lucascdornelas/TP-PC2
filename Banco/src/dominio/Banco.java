@@ -70,8 +70,9 @@ public class Banco {
         }
     }
     
-    public String verificaLogin(String login, String senha) throws NaoExisteContaException
+    public String[] verificaLogin(String login, String senha) throws NaoExisteContaException
     {
+        String retorno[] = new String[2];
         int registrador = 0;
         Iterator<Pessoa> it = clientes.iterator();
         
@@ -82,8 +83,10 @@ public class Banco {
             {
                 if(aux.getSenhaDaConta() == Integer.parseInt(senha))
                 {
+                    retorno[0] = aux.getNome();
+                    retorno[1] = aux.getId();
                     registrador++;
-                    return aux.getNome();
+                    return retorno;
                 }
             }
         }

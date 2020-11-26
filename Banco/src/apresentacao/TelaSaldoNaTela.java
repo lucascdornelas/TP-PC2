@@ -12,14 +12,15 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
     private TelaPrincipalUsuario telaPrincipalUsuario;
     private Banco banco; 
     private String nomeCliente;
+    private String id;
     
     private String numeroDaConta;
     
-    public TelaSaldoNaTela(TelaPrincipalUsuario telaPrincipalUsuario, Banco banco, String nomeCliente) {
+    public TelaSaldoNaTela(TelaPrincipalUsuario telaPrincipalUsuario, Banco banco, String nomeCliente, String id) {
         this.telaPrincipalUsuario = telaPrincipalUsuario;
         this.banco = banco;
         this.nomeCliente = nomeCliente;
-        
+        this.id = id;
         initComponents();
         inicializa();        
     }
@@ -48,7 +49,7 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
         while(it_pessoas.hasNext())
         {
             Pessoa aux_pessoas = it_pessoas.next();
-            if(aux_pessoas.getNome().equals(nomeCliente))
+            if(aux_pessoas.getId().equals(id))
                 this.jComboBoxContasDoCliente.addItem(aux_pessoas.getLoginDaConta());                   
         }
     }
@@ -83,7 +84,7 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
 
         jPanel1.setToolTipText("Banco Sudeste - Saldo na tela");
 
-        jLabel1.setText("Olá,");
+        jLabel1.setText("Ola,");
 
         jLabelNomeDoCliente.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         jLabelNomeDoCliente.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

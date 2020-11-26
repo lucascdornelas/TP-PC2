@@ -10,21 +10,23 @@ import javax.swing.JOptionPane;
 public class TelaPrincipalUsuario extends javax.swing.JFrame {
     private Banco banco;
     private String nomeCliente;
+    private String id;
     private Conta conta;
     private String numeroConta;
     
     private TelaSaldoNaTela telaSaldoNaTela;
     private TelaSaqueDepositoTransferir telaSaqueDepositoTransferir;
 
-    public TelaPrincipalUsuario(Banco banco, String nomeCliente, Conta conta, String numeroConta) 
+    public TelaPrincipalUsuario(Banco banco, String nomeCliente,String id, Conta conta, String numeroConta) 
     {
         this.banco = banco;
         this.nomeCliente = nomeCliente;
+        this.id = id;
         this.conta = conta;
         this.numeroConta = numeroConta;
         
-        this.telaSaldoNaTela = new TelaSaldoNaTela(this,banco,nomeCliente);
-        this.telaSaqueDepositoTransferir = new TelaSaqueDepositoTransferir(this, banco, nomeCliente);
+        this.telaSaldoNaTela = new TelaSaldoNaTela(this,banco,nomeCliente, id);
+        this.telaSaqueDepositoTransferir = new TelaSaqueDepositoTransferir(this, banco, nomeCliente, id);
         
         initComponents();
         inicializa();
@@ -70,7 +72,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Banco Sudeste - Usuário");
 
-        jLabel1.setText("Olá,");
+        jLabel1.setText("Ola,");
 
         jButtonSaldoNaTela.setText("SALDO NA TELA");
         jButtonSaldoNaTela.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +170,7 @@ public class TelaPrincipalUsuario extends javax.swing.JFrame {
 
     private void jButtonSaldoNaTelaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaldoNaTelaActionPerformed
         this.setVisible(false);
-        this.telaSaldoNaTela.inicializa();
+        this.telaSaldoNaTela.defineSaldo();
         this.telaSaldoNaTela.setVisible(true);
     }//GEN-LAST:event_jButtonSaldoNaTelaActionPerformed
 

@@ -74,6 +74,9 @@ public class CreateTextFile{
                     conta = c.toString();
                     output.format("%s", conta);
                 }
+                
+                String id = cliente.getId();
+                output.format("%s", id);
                 closeFile();
             }
         } 

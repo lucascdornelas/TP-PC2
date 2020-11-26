@@ -27,11 +27,11 @@ public class Memoria {
             ReadTextFile.openFile("pessoas/" + login + ".txt");
             
             ArrayList<String> dadosPessoa = ReadTextFile.readRecords();
-            
+            /*
             for(String d : dadosPessoa){
                 System.out.println(d);
             }
-            System.out.println(dadosPessoa.get(0).toString());
+            System.out.println(dadosPessoa.get(0).toString());*/
             int senha = Integer.parseInt(dadosPessoa.get(0));
 
             // Nome
@@ -59,7 +59,9 @@ public class Memoria {
             String aux1 = words[6];
             String aux2 = words[7];
             
-            Pessoa pessoa = new Pessoa(nome, contato, endereco, login, senha);
+            String id = dadosPessoa.get(11);
+            
+            Pessoa pessoa = new Pessoa(nome, contato, endereco, login, senha, id);
 
             if(tipoConta.equals("1")){
                 double saldoDisponivel = Double.parseDouble(aux1);
@@ -122,10 +124,10 @@ public class Memoria {
             }
             catch (Exception e)
             {
-                System.out.println("Apenas uma conta cadastrada");
+                System.err.println("Apenas uma conta cadastrada");
             }
 
-            System.out.println(pessoa.toString());
+            //System.out.println(pessoa.toString());
             
             this.banco.getClientes().add(pessoa);
 

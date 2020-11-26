@@ -18,14 +18,15 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
     
     private Banco banco; 
     private String nomeCliente;
+    private String id;
     
     private String valor;
     private String numeroDaConta;
 
-    public TelaSaqueDepositoTransferir(TelaPrincipalUsuario telaPrincipalUsuario, Banco banco, String nomeCliente) {
+    public TelaSaqueDepositoTransferir(TelaPrincipalUsuario telaPrincipalUsuario, Banco banco, String nomeCliente, String id) {
         this.banco = banco;
         this.nomeCliente = nomeCliente;       
-        
+        this.id = id;
         this.telaPrincipalUsuario = telaPrincipalUsuario;
  
         initComponents();
@@ -49,7 +50,7 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
         while(it_pessoas.hasNext())
         {
             Pessoa aux_pessoas = it_pessoas.next();
-            if(aux_pessoas.getNome().equals(nomeCliente))
+            if(aux_pessoas.getId().equals(id))
                 this.jComboBoxContasDoCliente.addItem(aux_pessoas.getLoginDaConta());
         }
     }
@@ -118,7 +119,7 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
         jLabelDate.setForeground(new java.awt.Color(0, 153, 0));
         jLabelDate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
-        jLabel4.setText("Olá,");
+        jLabel4.setText("Ola,");
 
         jLabelNomeDoCliente.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
 
