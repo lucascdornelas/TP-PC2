@@ -85,7 +85,7 @@ public class Memoria {
                 
                 pessoa.setContas(conta1);
             }
-
+/*
             try 
             {
                 words = dadosPessoa.get(11).split(" ");
@@ -126,7 +126,7 @@ public class Memoria {
             {
                 System.err.println("Apenas uma conta cadastrada");
             }
-
+*/
             //System.out.println(pessoa.toString());
             
             this.banco.getClientes().add(pessoa);
