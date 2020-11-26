@@ -194,7 +194,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Saldo Dispon&#xed;vel: $"/>
+            <Property name="text" type="java.lang.String" value="Saldo Disponivel: $"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelSaldoCliente">

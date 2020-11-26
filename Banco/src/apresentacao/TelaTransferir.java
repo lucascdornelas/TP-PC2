@@ -111,7 +111,7 @@ public class TelaTransferir extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Saldo Disponível: $");
+        jLabel3.setText("Saldo Disponivel: $");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -211,7 +211,7 @@ public class TelaTransferir extends javax.swing.JFrame {
         } 
         catch (NumberFormatException ex) 
         {
-            JOptionPane.showMessageDialog(null, "Algarismo Inválido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Algarismo Invalido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
         }
         catch (NaoExisteContaException ex)
         {

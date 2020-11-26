@@ -193,7 +193,7 @@ public class TelaInicial extends javax.swing.JFrame {
             retorno = banco.verificaLogin(login, senha);
             this.nome = retorno[0].toString();
             this.id = retorno[1].toString();
-            JOptionPane.showMessageDialog(null,"OLÁ, SEJA BEM VINDO NOVAMENTE: "+nome ,"LOGIN", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"OLA, SEJA BEM VINDO NOVAMENTE: "+nome ,"LOGIN", JOptionPane.INFORMATION_MESSAGE);
             this.telaPrincipalUsuario = new TelaPrincipalUsuario(banco, nome,id,conta, login);
             telaPrincipalUsuario.setVisible(true);
             this.setVisible(false);
@@ -201,14 +201,14 @@ public class TelaInicial extends javax.swing.JFrame {
 
         catch(NaoExisteContaException ex)
         {
-            JOptionPane.showMessageDialog(null,"USUÁRIO OU SENHA INCORRETO" ,"LOGIN", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null,"USUARIO OU SENHA INCORRETO" ,"LOGIN", JOptionPane.ERROR_MESSAGE);
             this.jFieldUsuario.setText("");
             this.jFieldSenha.setText("");
         }
     }//GEN-LAST:event_jButtonLoginActionPerformed
 
     private void jButtonEsqueciMinhaSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEsqueciMinhaSenhaActionPerformed
-        JOptionPane.showMessageDialog(null,"Vefique suas informações na gerência\n"+"bancosudeste@naoexiste.com.br" ,"LOGIN", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Vefique suas informações na gerencia\n"+"bancosudeste@naoexiste.com.br" ,"LOGIN", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButtonEsqueciMinhaSenhaActionPerformed
 
     public static void main(String args[]) 

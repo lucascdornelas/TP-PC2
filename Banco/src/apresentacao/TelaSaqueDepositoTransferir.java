@@ -101,7 +101,7 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
             }
         });
 
-        jButtonDeposito.setText("Depósito");
+        jButtonDeposito.setText("Deposito");
         jButtonDeposito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDepositoActionPerformed(evt);
@@ -265,7 +265,7 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
         } 
         catch (NumberFormatException ex) 
         {
-            JOptionPane.showMessageDialog(null, "Algarismo Inválido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Algarismo Invalido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
         }
         
         catch (SaqueDepositoException ex)
@@ -294,7 +294,7 @@ public class TelaSaqueDepositoTransferir extends javax.swing.JFrame {
         } 
         catch (NumberFormatException ex) 
         {
-            JOptionPane.showMessageDialog(null, "Algarismo Inválido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Algarismo Invalido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
         }
         catch (SaqueDepositoException ex)
         {

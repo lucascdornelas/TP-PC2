@@ -66,7 +66,7 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButtonSair = new javax.swing.JButton();
         jButtonVoltarAoMenuAnterior = new javax.swing.JButton();
-        jButtonDesconheçoMeuSaldo = new javax.swing.JButton();
+        jButtonDesconhecoMeuSaldo = new javax.swing.JButton();
         jLabelSaldoDoCliente = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabelDate = new javax.swing.JLabel();
@@ -106,8 +106,8 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
             }
         });
 
-        jButtonDesconheçoMeuSaldo.setText("Desconheco o meu saldo");
-        jButtonDesconheçoMeuSaldo.addActionListener(new java.awt.event.ActionListener() {
+        jButtonDesconhecoMeuSaldo.setText("Desconheco o meu saldo");
+        jButtonDesconhecoMeuSaldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDesconhecoMeuSaldoActionPerformed(evt);
             }
@@ -147,7 +147,7 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel3)
-                                    .addComponent(jButtonDesconheçoMeuSaldo, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
+                                    .addComponent(jButtonDesconhecoMeuSaldo, javax.swing.GroupLayout.DEFAULT_SIZE, 281, Short.MAX_VALUE)
                                     .addComponent(jButtonVoltarAoMenuAnterior, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButtonSair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -185,7 +185,7 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonDesconheçoMeuSaldo)
+                        .addComponent(jButtonDesconhecoMeuSaldo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonVoltarAoMenuAnterior)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -218,7 +218,7 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVoltarAoMenuAnteriorActionPerformed
 
     private void jButtonDesconhecoMeuSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDesconhecoMeuSaldoActionPerformed
-        JOptionPane.showMessageDialog(null,"Vefique sua ocorrência na gerência\n"+"bancosudeste@naoexiste.com.br" ,"SALDO DESCONHECIDO", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null,"Vefique sua ocorrencia na gerencia\n"+"bancosudeste@naoexiste.com.br" ,"SALDO DESCONHECIDO", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_jButtonDesconhecoMeuSaldoActionPerformed
 
     private void jComboBoxContasDoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxContasDoClienteActionPerformed
@@ -234,7 +234,7 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButtonDesconheçoMeuSaldo;
+    private javax.swing.JButton jButtonDesconhecoMeuSaldo;
     private javax.swing.JButton jButtonSair;
     private javax.swing.JButton jButtonVoltarAoMenuAnterior;
     private javax.swing.JComboBox<String> jComboBoxContasDoCliente;
