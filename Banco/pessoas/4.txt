@@ -1,0 +1,11 @@
+64
+Dados do Usuario:
+d
+d
+d
+d
+d
+d
+d
+MG
+0001 4 4 4 -10.0 1 -10.0 10.0

@@ -29,7 +29,7 @@ public class ContaPoupanca extends Conta{
     {
         double acrescimo = (this.rendimento*getSaldoInvestido())/100;
         setSaldoInvestido(getSaldoInvestido()+acrescimo);
-        super.setSaldoTotal(saldoInvestido);
+        super.setSaldoTotal(super.getSaldoTotal()+saldoInvestido);
     }
     
     public double getRendimento() {

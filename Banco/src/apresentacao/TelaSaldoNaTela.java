@@ -105,10 +105,10 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
             }
         });
 
-        jButtonDesconheçoMeuSaldo.setText("Desconheço o meu saldo");
+        jButtonDesconheçoMeuSaldo.setText("Desconheco o meu saldo");
         jButtonDesconheçoMeuSaldo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonDesconheçoMeuSaldoActionPerformed(evt);
+                jButtonDesconhecoMeuSaldoActionPerformed(evt);
             }
         });
 
@@ -180,18 +180,16 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabelSaldoDoCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addComponent(jLabelSaldoDoCliente, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(jButtonDesconheçoMeuSaldo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonVoltarAoMenuAnterior)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonSair)
-                        .addGap(43, 43, 43))))
+                        .addComponent(jButtonSair)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -207,7 +205,7 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -218,9 +216,9 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
         this.telaPrincipalUsuario.setVisible(true);
     }//GEN-LAST:event_jButtonVoltarAoMenuAnteriorActionPerformed
 
-    private void jButtonDesconheçoMeuSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDesconheçoMeuSaldoActionPerformed
+    private void jButtonDesconhecoMeuSaldoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDesconhecoMeuSaldoActionPerformed
         JOptionPane.showMessageDialog(null,"Vefique sua ocorrência na gerência\n"+"bancosudeste@naoexiste.com.br" ,"SALDO DESCONHECIDO", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_jButtonDesconheçoMeuSaldoActionPerformed
+    }//GEN-LAST:event_jButtonDesconhecoMeuSaldoActionPerformed
 
     private void jComboBoxContasDoClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxContasDoClienteActionPerformed
         this.numeroDaConta = this.jComboBoxContasDoCliente.getSelectedItem().toString();
@@ -228,6 +226,7 @@ public class TelaSaldoNaTela extends javax.swing.JFrame {
     }//GEN-LAST:event_jComboBoxContasDoClienteActionPerformed
 
     private void jButtonSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSairActionPerformed
+        banco.salvarClientes();
         System.exit(0);
     }//GEN-LAST:event_jButtonSairActionPerformed
 

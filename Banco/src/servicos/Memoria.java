@@ -67,7 +67,7 @@ public class Memoria {
                 
                 ContaCorrente conta1 = new ContaCorrente(agencia, numeroContaNovoCliente, numeroContaUltimoCliente, Double.parseDouble(Saldo));
                 conta1.setNumero(numeroDaConta);
-                conta1.setSaldoTotal(saldoDisponivel);
+                conta1.setSaldoTotal(Double.parseDouble(Saldo));
                 conta1.setTaxaMensal(taxaMensal);
                 
                 pessoa.setContas(conta1);
@@ -102,7 +102,7 @@ public class Memoria {
 
                     ContaCorrente conta1 = new ContaCorrente(agencia, numeroContaNovoCliente, numeroContaUltimoCliente, Double.parseDouble(Saldo));
                     conta1.setNumero(numeroDaConta);
-                    conta1.setSaldoTotal(saldoDisponivel);
+                    conta1.setSaldoTotal(Double.parseDouble(Saldo));
                     conta1.setTaxaMensal(taxaMensal);
 
                     pessoa.setContas(conta1);

@@ -30,7 +30,6 @@ public class TelaInicial extends javax.swing.JFrame {
         
         
         int pessoasCadastradas = banco.getClientes().size() -1;
-        //System.out.println(pessoasCadastradas+1);
         if( pessoasCadastradas+1 > 0){
             Pessoa p = this.banco.getClientes().get(pessoasCadastradas);
             

@@ -2,6 +2,7 @@ package apresentacao;
 
 import Exception.NaoExisteContaException;
 import Exception.NaoTemDinheiroException;
+import Exception.SaqueDepositoException;
 import dominio.Banco;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -201,7 +202,8 @@ public class TelaTransferir extends javax.swing.JFrame {
         try 
         {
             banco.transferir(this.contaOrigem, this.contaTransferencia, (Double.parseDouble(this.valorTransferencia)));
-            JOptionPane.showMessageDialog(null, "Transferencia realizada com sucesso!", "Banco Sudeste", JOptionPane.INFORMATION_MESSAGE);            
+            JOptionPane.showMessageDialog(null, "Transferencia realizada com sucesso!", "Banco Sudeste", JOptionPane.INFORMATION_MESSAGE);    
+            banco.salvarClientes();
         } 
         catch (NaoTemDinheiroException ex) 
         {
@@ -212,6 +214,10 @@ public class TelaTransferir extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Algarismo Inválido", "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
         }
         catch (NaoExisteContaException ex)
+        {
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
+        }
+                catch (SaqueDepositoException ex)
         {
             JOptionPane.showMessageDialog(null, ex.getMessage(), "Banco Sudeste", JOptionPane.ERROR_MESSAGE);
         }
@@ -231,6 +237,8 @@ public class TelaTransferir extends javax.swing.JFrame {
         this.jTextFieldValorTransferencia.setText("");
         this.setVisible(false);
         this.telaSaqueDepositoTransferir.setVisible(true);
+        banco.salvarClientes();
+        System.exit(0);
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

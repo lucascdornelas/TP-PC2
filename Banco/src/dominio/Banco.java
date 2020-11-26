@@ -3,6 +3,7 @@ package dominio;
 import Exception.NaoExisteContaException;
 import Exception.NaoExisteDadosException;
 import Exception.NaoTemDinheiroException;
+import Exception.SaqueDepositoException;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ public class Banco {
         this.clientes = new ArrayList<>();
     }
 
-    public ArrayList<Pessoa> getClientes() {
+    public ArrayList<Pessoa> getClientes(){
         return clientes;
     }
 
@@ -115,9 +116,12 @@ public class Banco {
         return 0;
     }
     
-    public void saque(String numeroDaConta, double valorDoSaque) throws NaoTemDinheiroException
+    public void saque(String numeroDaConta, double valorDoSaque) throws SaqueDepositoException, NaoTemDinheiroException
     {
         double saldo = saldoContaCliente(numeroDaConta);
+        if(valorDoSaque<0)
+            throw new SaqueDepositoException();
+        
         if(saldo >= valorDoSaque)
         {
             Iterator<Pessoa> it_pessoas = clientes.iterator();
@@ -146,11 +150,15 @@ public class Banco {
         }
     }
     
-    public void deposito(String numeroDaConta, double valorDeposito) 
+    public void deposito(String numeroDaConta, double valorDeposito) throws SaqueDepositoException 
     {
+        if(valorDeposito<0)
+            throw new SaqueDepositoException();
+        
         Iterator<Pessoa> it_pessoas = clientes.iterator();
 
-        while (it_pessoas.hasNext()) {
+        while (it_pessoas.hasNext()) 
+        {
             Pessoa aux_pessoas = it_pessoas.next();
             if (aux_pessoas.getLoginDaConta().equals(numeroDaConta)) {
                 Iterator<Conta> it_contas = aux_pessoas.getContas().iterator();
@@ -165,10 +173,11 @@ public class Banco {
         }
     }
     
-    public void transferir(String numeroContaOrigem, String numeroDaContaDestino, double valorTransferencia) throws NaoExisteContaException, NaoTemDinheiroException
+    public void transferir(String numeroContaOrigem, String numeroDaContaDestino, double valorTransferencia) throws NaoExisteContaException, NaoTemDinheiroException, SaqueDepositoException
     {
         int registrador = 0;
         //se conseguir sacar, ele pode transferir
+
         this.saque(numeroContaOrigem,valorTransferencia);
         
             Iterator<Pessoa> it_pessoas = clientes.iterator();
