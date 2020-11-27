@@ -10,7 +10,13 @@
 * Leonardo Mendes de Araújo					      			         *
 * Lucas Cota Dornelas				                      			         *
 * Túlio Ferreira Horta						    		         *
-* 										         *
+* 										         *	
+* BancoSudeste/UML_DIAGRAMAS:                                                                                                               *
+* Diagramas UML das classes do projeto. 		  					         *
+*										         *
+* BancoSudeste/dist									         *
+* Arquivo executável.jar                                						         *
+*								        		         *
 * Diagrama UML elaborado via software Eclipse, utilizando "The ObjectAid UML Explorer for Eclipse IDE".         *	  
 * 										         *
 * Banco Sudeste v1.0.								         *
@@ -19,6 +25,9 @@
 * principal.									         *	
 * 										         *
 * Seja bem vindo ao nosso banco!							         *
+*										         *
+*          									                         *
+*										         *
 * 										         *
 * Cordialmente,									         *
 * Equipe Banco Sudeste.								         *	
