@@ -1,0 +1,12 @@
+770
+Dados do Usuario:
+b
+b
+b
+b
+b
+b
+b
+SP
+0001 2 2 2 -10.0 1 -10.0 10.0
+1

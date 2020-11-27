@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="apresentacao.TelaCadastro" project="Banco" 
+    file="/Banco/src/apresentacao/TelaCadastro.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="873" width="332" x="-213" y="1166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="apresentacao.TelaSaldoNaTela" project="Banco" 
+    file="/Banco/src/apresentacao/TelaSaldoNaTela.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="319" y="1750"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="apresentacao.TelaInicial" project="Banco" 
+    file="/Banco/src/apresentacao/TelaInicial.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="-46" y="823"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="apresentacao.TelaPrincipalUsuario" project="Banco" 
+    file="/Banco/src/apresentacao/TelaPrincipalUsuario.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="342" y="819"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="apresentacao.TelaSaqueDepositoTransferir" project="Banco" 
+    file="/Banco/src/apresentacao/TelaSaqueDepositoTransferir.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="825" y="918"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="apresentacao.TelaTransferir" project="Banco" 
+    file="/Banco/src/apresentacao/TelaTransferir.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="682" y="1731"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="7">    
+    <bendpoint x="213" y="1250"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="8" name="telaSaldoNaTela"/>      
+      <multiplicity id="9" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="10">    
+    <bendpoint x="838" y="1363"/>    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="11" name="telaTransferir"/>      
+      <multiplicity id="12" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="13">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="14" name="telaPrincipalUsuario"/>      
+      <multiplicity id="15" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="16">    
+    <bendpoint x="51" y="1119"/>    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="17" name="telaInicial"/>      
+      <multiplicity id="18" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="19">    
+    <bendpoint x="-133" y="1113"/>    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="20" name="telaCriarConta"/>      
+      <multiplicity id="21" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="22">    
+    <bendpoint x="506" y="1267"/>    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="23" name="telaPrincipalUsuario"/>      
+      <multiplicity id="24" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="25">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="26" name="telaPrincipalUsuario"/>      
+      <multiplicity id="27" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="28">    
+    <bendpoint x="591" y="1019"/>    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="29" name="telaSaqueDepositoTransferir"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="31">    
+    <bendpoint x="661" y="1348"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="32" name="telaSaqueDepositoTransferir"/>      
+      <multiplicity id="33" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

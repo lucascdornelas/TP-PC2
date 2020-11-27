@@ -1,0 +1,12 @@
+746
+Dados do Usuario:
+f
+f
+f
+ff
+f
+f
+f
+SP
+0001 5 5 5 143.0 1 -10.0 10.0
+32

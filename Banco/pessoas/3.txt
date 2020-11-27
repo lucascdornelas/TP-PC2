@@ -1,0 +1,12 @@
+948
+Dados do Usuario:
+c
+c
+c
+c
+c
+c
+c
+SP
+0001 3 3 3 80.0 1 -10.0 10.0
+12

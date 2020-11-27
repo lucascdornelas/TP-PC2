@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="dominio.Endereco" project="Banco" file="/Banco/src/dominio/Endereco.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1470" y="213"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="dominio.PessoaFisica" project="Banco" file="/Banco/src/dominio/PessoaFisica.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1925" y="814"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="dominio.Banco" project="Banco" file="/Banco/src/dominio/Banco.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1337" y="603"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="dominio.ContaCorrente" project="Banco" 
+    file="/Banco/src/dominio/ContaCorrente.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1843" y="1324"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="dominio.Contato" project="Banco" file="/Banco/src/dominio/Contato.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1725" y="256"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="dominio.Pessoa" project="Banco" file="/Banco/src/dominio/Pessoa.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1629" y="653"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="dominio.PessoaJuridica" project="Banco" 
+    file="/Banco/src/dominio/PessoaJuridica.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1939" y="656"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="dominio.ContaPoupanca" project="Banco" 
+    file="/Banco/src/dominio/ContaPoupanca.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1775" y="1060"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="dominio.Conta" project="Banco" file="/Banco/src/dominio/Conta.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1339" y="1154"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="apresentacao.TelaCadastro" project="Banco" 
+    file="/Banco/src/apresentacao/TelaCadastro.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="284" y="1998"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="apresentacao.TelaSaldoNaTela" project="Banco" 
+    file="/Banco/src/apresentacao/TelaSaldoNaTela.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="299" y="1212"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="apresentacao.TelaInicial" project="Banco" 
+    file="/Banco/src/apresentacao/TelaInicial.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="743" y="1184"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="apresentacao.TelaPrincipalUsuario" project="Banco" 
+    file="/Banco/src/apresentacao/TelaPrincipalUsuario.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="530" y="605"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="apresentacao.TelaSaqueDepositoTransferir" project="Banco" 
+    file="/Banco/src/apresentacao/TelaSaqueDepositoTransferir.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="502" y="-46"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="apresentacao.TelaTransferir" project="Banco" 
+    file="/Banco/src/apresentacao/TelaTransferir.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1017" y="-196"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="servicos.ReadTextFile" project="Banco" 
+    file="/Banco/src/servicos/ReadTextFile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="855" y="509"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="servicos.CreateTextFile" project="Banco" 
+    file="/Banco/src/servicos/CreateTextFile.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="879" y="701"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="servicos.Memoria" project="Banco" file="/Banco/src/servicos/Memoria.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1059" y="720"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="Exception.NaoExisteDadosException" project="Banco" 
+    file="/Banco/src/Exception/NaoExisteDadosException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1001" y="1790"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="Exception.SaqueDepositoException" project="Banco" 
+    file="/Banco/src/Exception/SaqueDepositoException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1211" y="1790"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="Exception.NaoTemDinheiroException" project="Banco" 
+    file="/Banco/src/Exception/NaoTemDinheiroException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1420" y="1790"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="Exception.NaoExisteContaException" project="Banco" 
+    file="/Banco/src/Exception/NaoExisteContaException.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1632" y="1790"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="java.lang.Exception" project="Banco" 
+    file="C:/Program Files/Java/jdk-14/lib/jrt-fs.jar" binary="true" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1274" y="1613"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="24">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="25" name="conta"/>      
+      <multiplicity id="26" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="27">    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="28" name="conta"/>      
+      <multiplicity id="29" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="30">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <association id="31">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="32" name="pessoa"/>      
+      <multiplicity id="33" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="35" name="endereco"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="1" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="37">    
+    <bendpoint x="595" y="1618"/>    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="38" name="telaCriarConta"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="40">    
+    <bendpoint x="288" y="341"/>    
+    <bendpoint x="778" y="341"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="41" name="banco"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="43">    
+    <bendpoint x="308" y="845"/>    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="44" name="telaSaldoNaTela"/>      
+      <multiplicity id="45" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="46">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <association id="47">    
+    <bendpoint x="502" y="1527"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="48" name="telaInicial"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="51" name="banco"/>      
+      <multiplicity id="52" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="53">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="54" name="contato"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="56">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="57">    
+    <end type="SOURCE" refId="18" navigable="false">      
+      <attribute id="58" name="banco"/>      
+      <multiplicity id="59" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="60">    
+    <bendpoint x="718" y="-210"/>    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="61" name="telaSaqueDepositoTransferir"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="63">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="64" name="banco"/>      
+      <multiplicity id="65" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="66">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="67" name="conta"/>      
+      <multiplicity id="68" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="69">    
+    <bendpoint x="700" y="888"/>    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="70" name="telaPrincipalUsuario"/>      
+      <multiplicity id="71" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="72">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="73" name="banco"/>      
+      <multiplicity id="74" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="75">    
+    <bendpoint x="675" y="342"/>    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="76" name="telaSaqueDepositoTransferir"/>      
+      <multiplicity id="77" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="78">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="79">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="80" name="clientes"/>      
+      <multiplicity id="81" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <bendpoint x="472" y="910"/>    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="83" name="telaPrincipalUsuario"/>      
+      <multiplicity id="84" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="85">    
+    <bendpoint x="408" y="347"/>    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="86" name="telaPrincipalUsuario"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="88">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="89" name="contas"/>      
+      <multiplicity id="90" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="91">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <association id="92">    
+    <bendpoint x="70" y="1448"/>    
+    <bendpoint x="81" y="-485"/>    
+    <bendpoint x="1312" y="-485"/>    
+    <end type="SOURCE" refId="10" navigable="false">      
+      <attribute id="93" name="banco"/>      
+      <multiplicity id="94" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="95">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <association id="96">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="97" name="lerArquivos"/>      
+      <multiplicity id="98" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="18" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="99">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <association id="100">    
+    <bendpoint x="778" y="32"/>    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="101" name="telaTransferir"/>      
+      <multiplicity id="102" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="103">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="23"/>  
+  </generalization>  
+  <association id="104">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="105" name="banco"/>      
+      <multiplicity id="106" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
