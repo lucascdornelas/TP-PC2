@@ -8,5 +8,5 @@ O trabalho consiste na producao de um projeto orientado a objetos no modelo orga
 ## Diagrama UML (*padronizacao MVC*)
 Segue anexo o diagrama do projeto, sendo o pacote *GUI* correspondente a **v**isao, o *metodoBanco* ao **m**odelo e o *arquivosBanco* ao **c**ontrole.
 
-![Diagrama UML](/main/BancoSudeste/UML_DIAGRAMAS/DiagramaCompletoComDependencias.png)
+![Diagrama UML](TP-PC2/blob/main/BancoSudeste/UML_DIAGRAMAS/DiagramaCompletoComDependencias.png)
 
