@@ -189,8 +189,8 @@ public class TelaInicial extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonCriarContaActionPerformed
 
     private void jButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginActionPerformed
-        String login;
-        String retorno[];
+        String login = new String();
+        String retorno[] = new String[2];
         login = this.jFieldUsuario.getText();
         String senha = new String(this.jFieldSenha.getPassword());
         

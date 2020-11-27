@@ -49,7 +49,6 @@ public class CreateTextFile{
                 
                 String senha = String.valueOf(cliente.getSenhaDaConta());
                 String nome = cliente.getNome();
-                
               
                 output.format("%s\n", senha); 
                 output.format("Dados do Usuario:\n%s\n", nome); 

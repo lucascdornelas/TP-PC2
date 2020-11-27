@@ -20,7 +20,7 @@ public class Pessoa {
         this.nome = nome;
         this.contato = contato;
         this.endereco = endereo;
-        this.contas = new ArrayList<>();
+        this.contas = new ArrayList<Conta>();
         this.loginDaConta = "";
         this.senhaDaConta = 0;
         this.id = id;

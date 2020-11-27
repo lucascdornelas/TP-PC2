@@ -15,7 +15,7 @@ public class Banco {
     private ArrayList<Pessoa> clientes;
 
     public Banco() {
-        this.clientes = new ArrayList<>();
+        this.clientes = new ArrayList<Pessoa>();
     }
 
     public ArrayList<Pessoa> getClientes(){

@@ -15,7 +15,6 @@ public class TelaTransferir extends javax.swing.JFrame {
     private Banco banco; 
     private String nomeCliente;
     
-    
     private String contaOrigem, valorTransferencia, contaTransferencia;
 
     public TelaTransferir(Banco banco, String nomeCliente,TelaSaqueDepositoTransferir telaSaqueDepositoTransferir, String contaOrigem) {

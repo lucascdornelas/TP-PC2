@@ -27,7 +27,7 @@ public class ReadTextFile{
 
     //read record from file
     public static ArrayList<String> readRecords(){
-        ArrayList<String> palavras = new ArrayList();
+        ArrayList<String> palavras = new ArrayList<String>();
         
         try 
         {
